@@ -1,0 +1,17 @@
+doctype html
+html(lang='ja')
+  head
+    meta(charset='utf-8')
+    title User
+    body
+      p Hello, #{USER}!!
+      p
+        | あなたは
+        span.group
+        | です。
+
+      if USER != ''
+        form(action='/logout' method='GET')
+          input(type='submit' value='logout')
+
+    script(src="/dist/js/app.bundle.js")
