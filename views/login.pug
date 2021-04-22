@@ -4,12 +4,14 @@ html(lang='ja')
     meta(charset='utf-8')
     title login
   body
-    if ERROR != ''
-      p #{ERROR}
-    form(action='/login' method='POST')
-      input#username(type='text' name='username' placeholder='UserName')
-      input#password(type='password' name='password' placeholder='password')
-      input#cropped(type='hidden' name='cropped')
-      button(type='submit' value='送信') 送信
+    main.ly_login
+      if ERROR != ''
+        p.bl_login_error #{ERROR}
+      section.bl_form_login
+        form(action='/login' method='POST')
+          input#username.el_form_text(type='text' name='username' placeholder='UserName')
+          input#password.el_form_text(type='password' name='password' placeholder='password')
+          input#cropped(type='hidden' name='cropped')
+          button.el_form_btn(type='submit' value='送信') 送信
 
     script(src="/dist/js/app.bundle.js")
