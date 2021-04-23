@@ -66,7 +66,9 @@ app.set('view engine', 'pug');
 
 // static
 const jsAssetPath = path.join(__dirname, '../views/dist/js');
+const imgAssetPath = path.join(__dirname, '../views/dist/img');
 app.use('/dist/js', express.static(jsAssetPath));
+app.use('/dist/img', express.static(imgAssetPath));
 
 // connect-flashの定義
 app.use(flash());
