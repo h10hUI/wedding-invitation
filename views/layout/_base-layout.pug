@@ -1,3 +1,4 @@
+include ../data/_data.pug
 block var
 doctype html
 html(lang='ja')
@@ -5,8 +6,10 @@ html(lang='ja')
     block head
       meta(charset='utf-8')
       title #{global.siteName} | #{title}
-    block pageMeta
-      <meta name='robots' #{global.siteMeta.robots}>
+    block siteMeta
+      <meta name='robots' content=#{global.siteMeta.robots}>
+      <meta name='description' content=#{global.siteMeta.description}>
+      <meta name='viewport' content=#{global.siteMeta.viewport}>
   body
     block content
     script(src='/dist/js/app.bundle.js')
