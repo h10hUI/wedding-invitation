@@ -1,17 +1,13 @@
-doctype html
-html(lang='ja')
-  head
-    meta(charset='utf-8')
-    title login
-  body
-    main.ly_login
-      if ERROR != ''
-        p.bl_login_error #{ERROR}
-      section.bl_form_login
-        form(action='/login' method='POST')
-          input#username.el_form_text(type='text' name='username' placeholder='UserName')
-          input#password.el_form_text(type='password' name='password' placeholder='password')
-          input#cropped(type='hidden' name='cropped')
-          button.el_form_btn(type='submit' value='送信') 送信
-
-    script(src="/dist/js/app.bundle.js")
+extends ./layout/_base-layout.pug
+block var
+  - var title = 'login'
+block content
+  main.ly_login
+    if ERROR != ''
+      p.bl_login_error #{ERROR}
+    section.bl_form_login
+      form(action='/login' method='POST')
+        input#username.el_form_text(type='text' name='username' placeholder='UserName')
+        input#password.el_form_text(type='password' name='password' placeholder='password')
+        input#cropped(type='hidden' name='cropped')
+        button.el_form_btn(type='submit' value='送信') 送信
