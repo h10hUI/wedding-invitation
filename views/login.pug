@@ -6,9 +6,14 @@ block content
   main.ly_login
     if ERROR != ''
       p.bl_login_error #{ERROR}
-    section.bl_form_login
-      form(action='/login' method='POST')
-        input#username.el_form_text(type='text' name='username' placeholder='UserName')
-        input#password.el_form_text(type='password' name='password' placeholder='password')
-        input#cropped(type='hidden' name='cropped')
-        button.el_form_btn(type='submit' value='送信') 送信
+    section.bl_loginForm
+      .bl_loginForm_imgWrapper
+        img(src='dist/img/mv@2x.jpg')
+      .bl_loginForm_content
+        p.bl_loginForm_caption
+          |ここにキャプションが入ります
+        form(action='/login' method='POST').bl_loginForm_form
+          input#username.bl_loginForm_input(type='text' name='username' placeholder='UserName')
+          input#password.bl_loginForm_input(type='password' name='password' placeholder='password')
+          input#cropped(type='hidden' name='cropped')
+          button.bl_loginForm_btn(type='submit' value='送信') 送信
