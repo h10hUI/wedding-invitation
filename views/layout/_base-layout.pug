@@ -4,7 +4,9 @@ html(lang='ja')
   head
     block head
       meta(charset='utf-8')
-      title #{ttl} | #{title}
+      title #{global.siteName} | #{title}
+    block pageMeta
+      <meta name='robots' #{global.siteMeta.robots}>
   body
     block content
     script(src='/dist/js/app.bundle.js')
