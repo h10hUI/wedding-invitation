@@ -1,6 +1,9 @@
 extends ./layout/_base-layout.pug
 block var
-  - var title = 'login'
+  include ./data/_data.pug
+  -
+    var ttl= global.siteName
+    var title = 'login'
 block content
   main.ly_login
     if ERROR != ''

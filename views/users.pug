@@ -1,6 +1,9 @@
 extends ./layout/_base-layout.pug
 block var
-  - var title = 'user'
+  include ./data/_data.pug
+  -
+    var ttl= global.siteName
+    var title = 'user'
 block content
   p Hello, #{USER}!!
   p
