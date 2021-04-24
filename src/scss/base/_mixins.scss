@@ -1,3 +1,5 @@
+@use './functions' as *;
+
 // breakpoints
 //**
 // * 呼び出しは
@@ -6,6 +8,7 @@
 // * @param $breakpoints
 // * @return mediaqueries
 // */
+
 $breakpoints: (
     'md': (min-width: 768px),
     'xl': (min-width: 1200px),
@@ -14,13 +17,35 @@ $breakpoints: (
 
 @mixin responsive($breakpoint) {
     @if map-has-key($breakpoints, $breakpoint) {
-        @media screen and #{inspect(map.get($breakpoints, $breakpoint))} {
+        @media screen and #{inspect(map-get($breakpoints, $breakpoint))} {
             @content
         }
     }
-    // エラーハンドリング
-    @else {
-        @error "指定されたブレークポイントは定義されていません。" + "指定できるブレークポイントはは次の通りです。 -> #{mag-keys($breakpoints)}";
-    }
 }
 
+// font-size
+//**
+// * 呼び出しは
+// * @include fontsize(**)
+// *
+// * @param $fonts
+// * @return font-size
+// */
+
+$fonts: (
+    's': 10,
+    'normal': 14,
+    'l': 18,
+    'xl': 34,
+    'xxl': 42,
+    'form': 16
+) !default;
+
+@mixin fontsize($font) {
+    @if map-has-key($fonts, $font) {
+        $map: 10 / 16 * 1rem;
+        $map2: map-get($fonts, $font) / 16 * 1rem;
+        $map3: get_vw((map-get($fonts, $font)));
+        font-size: clamp(#{$map}, #{$map2}, #{$map3});
+    }
+}
