@@ -1,0 +1,26 @@
+// breakpoints
+//**
+// * 呼び出しは
+// * @include responsive(**)
+// *
+// * @param $breakpoints
+// * @return mediaqueries
+// */
+$breakpoints: (
+    'md': (min-width: 768px),
+    'xl': (min-width: 1200px),
+    'xxl': (min-width: 1400px),
+) !default;
+
+@mixin responsive($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media screen and #{inspect(map.get($breakpoints, $breakpoint))} {
+            @content
+        }
+    }
+    // エラーハンドリング
+    @else {
+        @error "指定されたブレークポイントは定義されていません。" + "指定できるブレークポイントはは次の通りです。 -> #{mag-keys($breakpoints)}";
+    }
+}
+
