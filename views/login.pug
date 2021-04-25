@@ -8,7 +8,7 @@ block content
       p.bl_login_error #{ERROR}
     section.bl_loginForm
       .bl_loginForm_imgWrapper
-        img(src='/dist/img/bg_image@2.jpg')
+        img.bl_loginForm_img(src='/dist/img/bg_image@2.jpg')
       .bl_loginForm_content
         p.bl_loginForm_caption
           |ログインのため、お名前とパスワードを入力してください。
@@ -18,4 +18,4 @@ block content
           input#username.bl_loginForm_input(type='text' name='username' placeholder='招待状宛先のお名前（氏名）')
           input#password.bl_loginForm_input(type='password' name='password' placeholder='パスワード')
           input#cropped(type='hidden' name='cropped')
-          button.bl_loginForm_btn(type='submit' value='送信') 送信
+          button.bl_loginForm_btn(type='submit' value='ログイン') ログイン

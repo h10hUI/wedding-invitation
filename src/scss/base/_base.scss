@@ -1,5 +1,6 @@
 @use './functions' as func;
 @use './mixins' as mix;
+@use './variables' as var;
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
 
@@ -10,5 +11,6 @@ body {
     flex-flow: column nowrap;
     max-width: 100%;
     overflow-x: hidden;
+    color: var.$black;
 }
 
