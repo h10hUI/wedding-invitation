@@ -1,0 +1,14 @@
+@use './functions' as func;
+@use './mixins' as mix;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    @include mix.fontsize(normal);
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
