@@ -1,0 +1,18 @@
+@use '../base/import' as base;
+
+.el_login {
+    &_error {
+        z-index: 10;
+        position: absolute;
+        top: 1em;
+        left: 50%;
+        width: 90%;
+        background-color: mix(red, base.$white, 30%);
+        text-align: center;
+        @include base.fontsize(l);
+        border-radius: 10px;
+        padding: 1em;
+        transform: translateX(-50%);
+    }
+}
+
