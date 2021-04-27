@@ -2,12 +2,24 @@ extends ./layout/_base-layout.pug
 block var
   -
     var title = 'user'
+    var userName = USER
 block content
-  p Hello, #{USER}!!
+  p Hello, #{userName}!
   p
     | あなたは
     span.group
     | です。
+
+  section.bl_replyForm
+    form.bl_replyForm_form(action='https://docs.google.com/forms/u/0/d/e/1FAIpQLSf1tfMkFcZ4Io3ZNapFe_ZYDQN0MV5C3nKXLSSX5ZeegcOliw/formResponse')
+      input.el_replyForm_input(name='entry.56205302', type='name' value=`${userName}`)
+      input.el_replyForm_input(name='entry.624038152', type='name')
+      input.el_replyForm_input(name='entry.1550646778', type='postal-code')
+      input.el_replyForm_input(name='entry.1654353405', type='text')
+      input.el_replyForm_input(name='entry.614177436', type='address-line1')
+      input.el_replyForm_input(name='entry.139051138', type='tel')
+      input.el_replyForm_input(name='entry.1456987626', type='email')
+      button.el_replyForm_button(type='submit') 送信
 
   if USER != ''
     form(action='/logout' method='GET')
