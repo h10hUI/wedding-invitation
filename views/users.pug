@@ -4,23 +4,147 @@ block var
     var title = 'user'
     var userName = USER
 block content
-  p Hello, #{userName}!
-  p
-    | あなたは
-    span.group
-    | です。
+  main.ly_user
+    header.bl_headerMenu
+      nav.bl_headerMenu_navigation
+        .bl_headerMenu_logo
+          include ./parts/logo_mark.svg
+        ul.bl_headerMenu_list
+          li.bl_headerMenu: a.el_headerMenu_link(href='#') ご挨拶
+          li.bl_headerMenu: a.el_headerMenu_link(href='#') 日時／会場
+          li.bl_headerMenu: a.el_headerMenu_link(href='#') ドレスコードについて
+          li.bl_headerMenu: a.el_headerMenu_link(href='#') お願い／ご注意
+          li.bl_headerMenu: a.el_headerMenu_link(href='#') 出欠フォーム
 
-  section.bl_replyForm
-    form.bl_replyForm_form(action='https://docs.google.com/forms/u/0/d/e/1FAIpQLSf1tfMkFcZ4Io3ZNapFe_ZYDQN0MV5C3nKXLSSX5ZeegcOliw/formResponse')
-      input.el_replyForm_input(name='entry.56205302', type='name' value=`${userName}`)
-      input.el_replyForm_input(name='entry.624038152', type='name')
-      input.el_replyForm_input(name='entry.1550646778', type='postal-code')
-      input.el_replyForm_input(name='entry.1654353405', type='text')
-      input.el_replyForm_input(name='entry.614177436', type='address-line1')
-      input.el_replyForm_input(name='entry.139051138', type='tel')
-      input.el_replyForm_input(name='entry.1456987626', type='email')
-      button.el_replyForm_button(type='submit') 送信
+    section.bl_mv
+      .bl_mv_container
+        img(src='/dist/img/mv@2x.jpg')
 
-  if USER != ''
-    form(action='/logout' method='GET')
-      input(type='submit' value='logout')
+    section.bl_greeting
+      h2.bl_sectionTitle ご挨拶
+      .bl_greeting_textWrapper
+        p.el_sectionText
+          |いつも支えてくれる大切なご友人のみなさまへ
+        p.el_sectionText
+          |昨年予定しておりました結婚式につきまして
+          br
+          |延期のご連絡をした際には
+          br
+          |たくさんの励ましの言葉を本当にありがとうございました
+        p.el_sectionText
+          |私たちは みなさまからのあたたかい言葉に勇気づけられ
+          br
+          |今年7月に1年越しのウエディングパーティーを 開催いたします
+          br
+          |未だ新型コロナウイルスの収束が見えない中
+          br
+          |ご出席にあたりご心配な面もあるかと思います
+        p.el_sectionText
+          |皆さまの健康と安全を第一に考え
+          br
+          |スタッフと連携を取りながら 出来る限りの感染対策をとってまいります
+        p.el_sectionText
+          |みなさまに気軽にご参加いただけるような
+          br
+          |ライトなパーティーを予定しているので
+          br
+          |ぜひご無理のない範囲で 会いにきていただけると すごく嬉しいです
+        p.el_sectionText
+          |みなさまとお会いできますことを 楽しみにしています!
+      .bl_greeting_sign
+        p.el_greeting_sign 2021年5月吉日
+        p.el_greeting_sign 佐藤 央　千織(旧姓 柴田)
+
+    section.bl_datePlace
+      - var place = 'Unwind+Hotel+%26+Bar+Sapporo'
+      h2.bl_sectionTitle 日時／会場
+      .bl_datePlace_textWrapper
+        p.el_sectionText
+          |2021年7月3日(土)
+        p.el_sectionText
+          |会場名：UNWIND HOTEL&BAR 中島公園
+          br
+          |URL：
+          a.el_datePlace_link(href='https://www.hotel-unwind.com') https://www.hotel-unwind.com
+          br
+          |住所：北海道札幌市中央区南8条西5丁目289-111
+          br
+          |電話番号:011-530-6050
+        p.el_sectionText
+          |会費：5000円
+      .bl_datePlace_map
+        iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2915.6033623617272!2d141.35021331547833!3d43.04977617914674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0b298837efffff%3A0x421b25ff82cbae48!2sUnwind%20Hotel%20%26%20Bar%20Sapporo!5e0!3m2!1sen!2sjp!4v1619763543326!5m2!1sen!2sjp" width="1080" height="600" style="border:0;" allowfullscreen="" loading="lazy")
+        .bl_sectionButton
+          a(href='https://www.google.com/maps/dir/?api=1&destination='+`${place}`, target='_blank') 現在地からのルート
+          span.bl_sectionButton_caption ※Google マップが開きます
+
+    section.bl_dresscode
+      h2.bl_sectionTitle ドレスコードについて
+      .bl_dresscode_textWrapper
+        p.el_sectionText
+          |テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+        p.el_sectionText
+          |テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+      .bl_sectionButton
+        a(href='#', target='_blank') イメージを確認する
+        span.bl_sectionButton_caption ※pinterestが開きます
+
+    section.bl_attention
+      h2.bl_sectionTitle お願い／ご注意
+      .bl_attention_container
+        - for (var i = 1; i <= 6; i++)
+          .bl_attention_content
+            p.el_attention_title 今回のパーティーについて
+            .bl_attention_answerBlock
+              p.el_attention_answer
+                |今回のパーティーは コロナ禍でもお気軽にご参加いただけるよう
+                br
+                |滞在時間を短く設定しております
+              p.el_attention_answer
+                |お飲み物や軽くつまんでいただけるようなお料理を
+                br
+                |ご用意してお待ちしております
+              p.el_attention_answer
+                |1時間のなかではありますが
+                br
+                |みなさまと一緒に会話をしたり 写真撮影をしたりと
+                br
+                |楽しいひとときを過ごせれば幸いです
+              p.el_attention_answer
+                |また1時間のなかでも
+                br
+                |途中参加 途中退席も可能ですので
+                br
+                |ぜひお気軽にご参加いただけますとうれしいです
+
+    section.bl_replyForm
+      h2.bl_sectionTitle 出欠フォーム
+      .bl_replyForm_textWrapper
+        p.el_sectionText
+          |回答期限：2021年6月3日
+          br
+          span.el_caption
+            |※締め切りは6月3日までとさせていただきますが
+            br
+            |6月23日までご出欠の変更も可能です
+            br
+            |ご不安な点がございましたら遠慮なくお知らせください
+      .bl_replyForm_boardingPass
+        include ./parts/boarding_pass.svg
+      form.bl_replyForm_form(action='https://docs.google.com/forms/u/0/d/e/1FAIpQLSf1tfMkFcZ4Io3ZNapFe_ZYDQN0MV5C3nKXLSSX5ZeegcOliw/formResponse')
+        input.el_replyForm_input(name='entry.56205302', type='name' value=`${userName}`)
+        input.el_replyForm_input(name='entry.624038152', type='name')
+        input.el_replyForm_input(name='entry.1550646778', type='postal-code')
+        input.el_replyForm_input(name='entry.1654353405', type='text')
+        input.el_replyForm_input(name='entry.614177436', type='address-line1')
+        input.el_replyForm_input(name='entry.139051138', type='tel')
+        input.el_replyForm_input(name='entry.1456987626', type='email')
+        button.el_replyForm_button(type='submit') 送信
+
+    if USER != ''
+      form(action='/logout' method='GET').bl_logoutForm
+        button(type='submit' value='logout').bl_logoutForm_button ログアウト
+
+    footer
+      p.footerText 2021 sugar pepper sparkle
+
