@@ -4,17 +4,18 @@ block var
     var title = 'user'
     var userName = USER
 block content
-  main.ly_user
+  main.ly_users
     header.bl_headerMenu
-      nav.bl_headerMenu_navigation
-        .bl_headerMenu_logo
-          include ./parts/logo_mark.svg
-        ul.bl_headerMenu_list
-          li.bl_headerMenu: a.el_headerMenu_link(href='#') ご挨拶
-          li.bl_headerMenu: a.el_headerMenu_link(href='#') 日時／会場
-          li.bl_headerMenu: a.el_headerMenu_link(href='#') ドレスコードについて
-          li.bl_headerMenu: a.el_headerMenu_link(href='#') お願い／ご注意
-          li.bl_headerMenu: a.el_headerMenu_link(href='#') 出欠フォーム
+      .bl_headerMenu_inner
+        nav.bl_headerMenu_navigation
+          .bl_headerMenu_logo
+            include ./parts/logo_mark.svg
+          ul.bl_headerMenu_list
+            li.bl_headerMenu_link: a.el_headerMenu_link(href='#') ご挨拶
+            li.bl_headerMenu_link: a.el_headerMenu_link(href='#') 日時／会場
+            li.bl_headerMenu_link: a.el_headerMenu_link(href='#') ドレスコードについて
+            li.bl_headerMenu_link: a.el_headerMenu_link(href='#') お願い／ご注意
+            li.bl_headerMenu_link: a.el_headerMenu_link(href='#') 出欠フォーム
 
     section.bl_mv
       .bl_mv_container
