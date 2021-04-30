@@ -1,0 +1,8 @@
+@use '../base/import' as base;
+
+.el_greeting {
+    &_sign {
+        @include base.fontsize(l);
+    }
+}
+

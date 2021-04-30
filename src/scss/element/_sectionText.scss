@@ -1,0 +1,10 @@
+@use '../base/import' as base;
+
+.el_sectionText {
+    @include base.fontsize(l);
+
+    &:not(:first-child){
+        margin-top: calc(1em * 1.5);
+    }
+}
+
