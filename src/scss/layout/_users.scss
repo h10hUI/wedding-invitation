@@ -13,6 +13,12 @@
             }
         }
     }
+
+    section + section {
+        @include base.responsive(md) {
+            margin-top: 84px;
+        }
+    }
 }
 
 .bl_headerMenu {
