@@ -88,20 +88,5 @@
         }
     }
 
-    &_btn {
-        appearance: none;
-        border: none;
-        box-shadow: none;
-        background-color: base.$black;
-        color: base.$white;
-        width: percentage(246 / 524);
-        border-radius: 1000px;
-        padding: 15px 10px;
-        cursor: pointer;
-
-        &:focus {
-            box-shadow: none;
-            outline: none;
-        }
-    }
+    @include base.btnstyle;
 }

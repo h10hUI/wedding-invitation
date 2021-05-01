@@ -1,5 +1,5 @@
+@use './variables' as var;
 @use './functions' as *;
-
 // breakpoints
 //**
 // * 呼び出しは
@@ -47,5 +47,26 @@ $fonts: (
         $map2: map-get($fonts, $font) / 16 * 1rem;
         $map3: get_vw((map-get($fonts, $font)));
         font-size: clamp(#{$map}, #{$map2}, #{$map3});
+    }
+}
+
+// button
+@mixin btnstyle {
+    [data-btn-style="black"] {
+        appearance: none;
+        border: none;
+        box-shadow: none;
+        background-color: var.$black;
+        color: var.$white;
+        width: percentage(246 / 524);
+        max-width: 246px;
+        border-radius: 1000px;
+        padding: 15px 10px;
+        cursor: pointer;
+
+        &:focus {
+            box-shadow: none;
+            outline: none;
+        }
     }
 }

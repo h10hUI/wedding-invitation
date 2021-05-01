@@ -78,7 +78,7 @@ block content
       .bl_datePlace_map
         iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2915.6033623617272!2d141.35021331547833!3d43.04977617914674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0b298837efffff%3A0x421b25ff82cbae48!2sUnwind%20Hotel%20%26%20Bar%20Sapporo!5e0!3m2!1sen!2sjp!4v1619763543326!5m2!1sen!2sjp" width="1080" height="600" style="border:0;" allowfullscreen="" loading="lazy")
         .bl_sectionButton
-          a(href='https://www.google.com/maps/dir/?api=1&destination='+`${place}`, target='_blank') 現在地からのルート
+          a.bl_sectionButton_link(href='https://www.google.com/maps/dir/?api=1&destination='+`${place}`, target='_blank', data-btn-style='black') 現在地からのルート
           span.bl_sectionButton_caption ※Google マップが開きます
 
     section.bl_dresscode
@@ -89,7 +89,7 @@ block content
         p.el_sectionText
           |テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
       .bl_sectionButton
-        a(href='#', target='_blank') イメージを確認する
+        a.bl_sectionButton_link(href='#', target='_blank', data-btn-style='black') イメージを確認する
         span.bl_sectionButton_caption ※pinterestが開きます
 
     section.bl_attention
