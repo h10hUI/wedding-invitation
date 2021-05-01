@@ -1,0 +1,20 @@
+@use '../base/import' as base;
+
+.bl_datePlace {
+    &_textWrapper {
+        + * {
+            margin-top: 32px;
+        }
+    }
+
+    &_map {
+        iframe {
+            width: 100%;
+
+            @include base.responsive(md) {
+                height: 600px
+            }
+        }
+    }
+}
+
