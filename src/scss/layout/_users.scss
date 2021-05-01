@@ -6,10 +6,10 @@
     align-items: center;
 
     > * {
-        &:not(.bl_headerMenu) {
+        &:not(.bl_headerMenu):not(.bl_mv) {
             @include base.responsive(md) {
-                width: percentage(1219 / 1920);
-                max-width: 1219px;
+                width: percentage(1080 / 1920);
+                max-width: 1080;
             }
         }
     }
