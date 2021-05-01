@@ -1,6 +1,10 @@
 @use '../base/import' as base;
 
 .bl_headerMenu {
+    z-index: 20;
+    position: relative;
+    background-color: base.$white;
+
     &_inner {
         @include base.responsive(md) {
             width: percentage(1219 / 1920);
