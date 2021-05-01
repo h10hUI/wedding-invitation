@@ -1,0 +1,46 @@
+@use '../base/import' as base;
+
+.bl_attention {
+    $this: &;
+
+    &_container {
+        #{$this}_content + #{$this}_content {
+            margin-top: 52px;
+        }
+    }
+
+    &_content {
+        &:nth-child(odd) {
+            [class*='_title'] {
+                border-left: 4px solid base.$purple;
+            }
+
+            [class*='_answer'] {
+                background-color: mix(base.$green, base.$white, 15%);
+            }
+        }
+
+        &:nth-child(even) {
+            [class*='_title'] {
+                border-left: 4px solid base.$green;
+            }
+
+            [class*='_answer'] {
+                background-color: mix(base.$purple, base.$white, 15%);
+            }
+        }
+    }
+
+    &_title {
+        @include base.fontsize(xl);
+    }
+
+    &_answerBlock {
+        margin-top: 32px;
+        padding: 20px;
+
+        * + * {
+            margin-top: 1em;
+        }
+    }
+}
