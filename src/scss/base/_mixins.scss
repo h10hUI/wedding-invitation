@@ -43,10 +43,14 @@ $fonts: (
 
 @mixin fontsize($font) {
     @if map-has-key($fonts, $font) {
-        $map: 10 / 16 * 1rem;
-        $map2: map-get($fonts, $font) / 16 * 1rem;
-        $map3: get_vw((map-get($fonts, $font)));
-        font-size: clamp(#{$map}, #{$map2}, #{$map3});
+        $map: '1rem + 2vw';
+        $max: map-get($fonts, $font) / 16 * 1rem;
+        $min: 100%;
+        $sp: get_vw(map-get($fonts, $font), 768);
+        font-size: clamp(#{$min}, #{$sp} + 2vw, #{$max});
+        @include responsive(md) {
+            font-size: clamp(#{$min}, #{$map}, #{$max});
+        }
     }
 }
 

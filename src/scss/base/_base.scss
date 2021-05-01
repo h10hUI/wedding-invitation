@@ -6,11 +6,15 @@
 
 body {
     font-family: 'Noto Sans JP', sans-serif;
-    @include mix.fontsize(normal);
+    font-size: 12px;
     display: flex;
     flex-flow: column nowrap;
     max-width: 100%;
     overflow-x: hidden;
     color: var.$black;
+
+    @include mix.responsive(md) {
+        font-size: 14px;
+    }
 }
 
