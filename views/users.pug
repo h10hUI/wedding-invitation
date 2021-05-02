@@ -164,10 +164,10 @@ block content
             input.el_replyForm_input(name='entry.1456987626', type='email')
           button.el_replyForm_button(type='submit' data-btn-style='black') 送信
 
-    footer
-      p.footerText 2021 sugar pepper sparkle
-      if USER != ''
-        form(action='/logout' method='GET').bl_logoutForm
-          button(type='submit' value='logout').bl_logoutForm_button ログアウト
-
+    footer.bl_footer
+      .bl_footer_inner
+        p.el_footer_text 2021 sugar pepper sparkle
+        a.el_footer_link(href='https://github.com/hi0711/wedding-invitation' target='_blank'): img(src='/dist/img/GitHub-Mark-Light-120px-plus.png')
+        form(action='/logout' method='GET').el_footer_logout
+          button(type='submit' value='logout').el_footer_logoutBtn ログアウト
 

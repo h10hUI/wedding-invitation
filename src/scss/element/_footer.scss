@@ -1,0 +1,39 @@
+@use '../base/import' as base;
+
+.el_footer {
+    &_text {
+        text-transform: uppercase;
+
+        @include base.fontsize(l);
+    }
+
+    &_link {
+        height: 2rem;
+
+        img {
+            height: 100%;
+        }
+
+        + * {
+            margin-left: auto;
+        }
+    }
+
+    &_logoutBtn {
+        appearance: none;
+        border: none;
+        box-shadow: none;
+        outline: none;
+        background: none;
+        padding: 0;
+        color: base.$white;
+        text-decoration: underline;
+        cursor: pointer;
+
+        @include base.fontsize(normal);
+
+        &:focus, &:active {
+            outline: none;
+        }
+    }
+}
