@@ -137,22 +137,37 @@ block content
             |6月23日までご出欠の変更も可能です
             br
             |ご不安な点がございましたら遠慮なくお知らせください
-      .bl_replyForm_boardingPass
-        include ./parts/boarding_pass.svg
-      form.bl_replyForm_form(action='https://docs.google.com/forms/u/0/d/e/1FAIpQLSf1tfMkFcZ4Io3ZNapFe_ZYDQN0MV5C3nKXLSSX5ZeegcOliw/formResponse')
-        input.el_replyForm_input(name='entry.56205302', type='name' value=`${userName}`)
-        input.el_replyForm_input(name='entry.624038152', type='name')
-        input.el_replyForm_input(name='entry.1550646778', type='postal-code')
-        input.el_replyForm_input(name='entry.1654353405', type='text')
-        input.el_replyForm_input(name='entry.614177436', type='address-line1')
-        input.el_replyForm_input(name='entry.139051138', type='tel')
-        input.el_replyForm_input(name='entry.1456987626', type='email')
-        button.el_replyForm_button(type='submit') 送信
-
-    if USER != ''
-      form(action='/logout' method='GET').bl_logoutForm
-        button(type='submit' value='logout').bl_logoutForm_button ログアウト
+      .bl_replyForm_contentWrapper
+        .bl_replyForm_boardingPass
+          include ./parts/boarding_pass.svg
+        form.bl_replyForm_form(action='https://docs.google.com/forms/u/0/d/e/1FAIpQLSf1tfMkFcZ4Io3ZNapFe_ZYDQN0MV5C3nKXLSSX5ZeegcOliw/formResponse')
+          label.bl_replyForm_inputGrp
+            span.el_replyForm_label お名前
+            input.el_replyForm_input(name='entry.56205302', type='name' value=`${userName}`)
+          label.bl_replyForm_inputGrp
+            span.el_replyForm_label ふりがな
+            input.el_replyForm_input(name='entry.624038152', type='name')
+          label.bl_replyForm_inputGrp
+            span.el_replyForm_label 郵便番号
+            input.el_replyForm_input(name='entry.1550646778', type='postal-code')
+          label.bl_replyForm_inputGrp
+            span.el_replyForm_label ご住所
+            input.el_replyForm_input(name='entry.1654353405', type='text')
+          label.bl_replyForm_inputGrp
+            span.el_replyForm_label 建物名
+            input.el_replyForm_input(name='entry.614177436', type='address-line1')
+          label.bl_replyForm_inputGrp
+            span.el_replyForm_label お電話番号
+            input.el_replyForm_input(name='entry.139051138', type='tel')
+          label.bl_replyForm_inputGrp
+            span.el_replyForm_label メールアドレス
+            input.el_replyForm_input(name='entry.1456987626', type='email')
+          button.el_replyForm_button(type='submit' data-btn-style='black') 送信
 
     footer
       p.footerText 2021 sugar pepper sparkle
+      if USER != ''
+        form(action='/logout' method='GET').bl_logoutForm
+          button(type='submit' value='logout').bl_logoutForm_button ログアウト
+
 

@@ -44,7 +44,7 @@ $fonts: (
 @mixin fontsize($font) {
     @if map-has-key($fonts, $font) {
         $map: '1rem + 2vw';
-        $max: map-get($fonts, $font) / 16 * 1rem;
+        $max: map-get($fonts, $font) / 14 * 1rem;
         $min: 100%;
         $sp: get_vw(map-get($fonts, $font), 768);
         font-size: clamp(#{$min}, #{$sp} + 2vw, #{$max});

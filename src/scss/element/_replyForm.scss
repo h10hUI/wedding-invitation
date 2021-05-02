@@ -1,0 +1,26 @@
+@use '../base/import' as base;
+
+.el_replyForm {
+    &_input, &_label {
+        @include base.fontsize(form);
+    }
+
+    &_label {
+        min-width: 7em;
+    }
+
+    &_input {
+        appearance: none;
+        outline: none;
+        border: none;
+        box-shadow: none;
+        width: 100%;
+        color: base.$black;
+
+        &:focus, &:active {
+            outline: none;
+            border: none;
+            box-shadow: none;
+        }
+    }
+}
