@@ -1,0 +1,9 @@
+.bl_greeting {
+    &_sign {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-end;
+        margin-top: 32px;
+    }
+}
+

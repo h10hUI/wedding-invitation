@@ -1,0 +1,13 @@
+@use '../base/import' as base;
+
+.el_attention {
+    &_title {
+        font-weight: bold;
+        padding-left: 16px;
+        @include base.fontsize(l);
+    }
+
+    &_answer {
+        @include base.fontsize(normal);
+    }
+}

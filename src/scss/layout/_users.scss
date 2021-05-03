@@ -1,0 +1,29 @@
+@use '../base/import' as base;
+
+.ly_users {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    > * {
+        &:not(.bl_headerMenu):not(.bl_mv):not(.bl_bubble):not(.bl_footer) {
+            @include base.responsive(md) {
+                width: percentage(1080 / 1920);
+                max-width: 1080;
+            }
+        }
+    }
+
+    section + section {
+        @include base.responsive(md) {
+            margin-top: 84px;
+        }
+    }
+}
+
+.bl_headerMenu, .bl_footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+

@@ -1,1 +1,13 @@
 @charset 'utf-8';
+
+// base
+@use './base/import' as base;
+
+// layout
+@use './layout/import' as layout;
+
+// block
+@use './block/import' as block;
+
+// element
+@use './element/import' as element;

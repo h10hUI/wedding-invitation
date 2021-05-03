@@ -1,0 +1,53 @@
+@use '../base/import' as base;
+
+.bl_replyForm {
+    &_contentWrapper {
+        display: flex;
+        margin-top: 52px;
+
+        @include base.responsive(md)  {
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 32px;
+        }
+    }
+
+    &_boardingPass {
+        @include base.responsive(md) {
+            width: percentage(3 / 8);
+        }
+
+        svg {
+            max-width: 100%;
+            filter: drop-shadow(0 0 12px rgba(base.$black, .3));
+        }
+    }
+
+    &_form {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        @include base.responsive(md) {
+            width: percentage(5 / 8);
+        }
+    }
+
+    &_inputGrp {
+        display: flex;
+        justify-content: flex-start;
+        gap: 92px;
+        width: 100%;
+        border-bottom: 1px solid base.$black;
+        padding-bottom: 12px;
+
+        & + & {
+            margin-top: 32px;
+        }
+
+        ~ button {
+            margin-top: 32px;
+        }
+    }
+
+    @include base.btnstyle;
+}

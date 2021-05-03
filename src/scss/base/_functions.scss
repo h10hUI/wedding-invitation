@@ -1,0 +1,7 @@
+// get-vw
+// $sizeを$vpwidthに合わせて出力
+@function get_vw($size, $vpwidth: 375) {
+    $rate: 100 / $vpwidth;
+    @return $rate * $size * 1vw;
+}
+

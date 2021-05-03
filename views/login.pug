@@ -1,15 +1,21 @@
-doctype html
-html(lang='ja')
-  head
-    meta(charset='utf-8')
-    title login
-  body
+extends ./layout/_base-layout.pug
+block var
+  -
+    var title = 'login'
+block content
+  main.ly_login
     if ERROR != ''
-      p #{ERROR}
-    form(action='/login' method='POST')
-      input#username(type='text' name='username' placeholder='UserName')
-      input#password(type='password' name='password' placeholder='password')
-      input#cropped(type='hidden' name='cropped')
-      button(type='submit' value='送信') 送信
-
-    script(src="/dist/js/app.bundle.js")
+      p.el_login_error #{ERROR}
+    section.bl_loginForm
+      .bl_loginForm_imgWrapper
+        img.bl_loginForm_img(src='/dist/img/bg_image@2.jpg')
+      .bl_loginForm_content
+        p.bl_loginForm_caption
+          |ログインのため、お名前とパスワードを入力してください。
+          br
+          |お名前は、招待状宛先のお名前をご入力ください。
+        form(action='/login' method='POST').bl_loginForm_form
+          input#username.bl_loginForm_input(type='text' name='username' placeholder='招待状宛先のお名前（氏名）')
+          input#password.bl_loginForm_input(type='password' name='password' placeholder='パスワード')
+          input#cropped(type='hidden' name='cropped')
+          button.bl_loginForm_btn(type='submit', data-btn-style='black', value='ログイン') ログイン

@@ -1,0 +1,76 @@
+@use './variables' as var;
+@use './functions' as *;
+// breakpoints
+//**
+// * 呼び出しは
+// * @include responsive(**)
+// *
+// * @param $breakpoints
+// * @return mediaqueries
+// */
+
+$breakpoints: (
+    'md': (min-width: 768px),
+    'xl': (min-width: 1200px),
+    'xxl': (min-width: 1400px),
+) !default;
+
+@mixin responsive($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media screen and #{inspect(map-get($breakpoints, $breakpoint))} {
+            @content
+        }
+    }
+}
+
+// font-size
+//**
+// * 呼び出しは
+// * @include fontsize(**)
+// *
+// * @param $fonts
+// * @return font-size
+// */
+
+$fonts: (
+    's': 10,
+    'normal': 14,
+    'l': 18,
+    'xl': 34,
+    'xxl': 42,
+    'form': 16
+) !default;
+
+@mixin fontsize($font) {
+    @if map-has-key($fonts, $font) {
+        $map: '1rem + 2vw';
+        $max: map-get($fonts, $font) / 14 * 1rem;
+        $min: 100%;
+        $sp: get_vw(map-get($fonts, $font), 768);
+        font-size: clamp(#{$min}, #{$sp} + 2vw, #{$max});
+        @include responsive(md) {
+            font-size: clamp(#{$min}, #{$map}, #{$max});
+        }
+    }
+}
+
+// button
+@mixin btnstyle {
+    [data-btn-style="black"] {
+        appearance: none;
+        border: none;
+        box-shadow: none;
+        background-color: var.$black;
+        color: var.$white;
+        width: percentage(246 / 524);
+        max-width: 246px;
+        border-radius: 1000px;
+        padding: 15px 10px;
+        cursor: pointer;
+
+        &:focus {
+            box-shadow: none;
+            outline: none;
+        }
+    }
+}

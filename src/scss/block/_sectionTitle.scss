@@ -1,0 +1,10 @@
+@use '../base/import' as base;
+
+.bl_sectionTitle {
+    @include base.fontsize(xl);
+
+    + * {
+        margin-top: 52px;
+    }
+}
+
