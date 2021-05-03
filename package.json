@@ -25,6 +25,10 @@
   },
   "homepage": "https://github.com/hi0711/express-passport-auth#readme",
   "dependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "autoprefixer": "^10.2.5",
+    "babel-loader": "^8.2.2",
     "bcrypt": "^5.0.1",
     "connect-flash": "^0.1.1",
     "cors": "^2.8.5",
@@ -40,10 +44,6 @@
     "webpack-cli": "^4.6.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.10",
-    "@babel/preset-env": "^7.13.10",
-    "autoprefixer": "^10.2.5",
-    "babel-loader": "^8.2.2",
     "babel-watch": "^7.4.1",
     "browserslist": "^4.16.4",
     "css-loader": "^5.2.2",
