@@ -7,7 +7,8 @@
     "heroku-postbuild": "npm run webpack:build",
     "start:client": "webpack-cli serve",
     "serve": "babel-watch ./src_server/index.js",
-    "webpack:build": "webpack --config ./webpack.config.prod.js"
+    "webpack:build": "webpack --config ./webpack.config.prod.js",
+    "prod": "npm run webpack:build && NODE_ENV=production nodemon ./src_server/index.js"
   },
   "repository": {
     "type": "git",

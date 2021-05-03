@@ -15,7 +15,9 @@ const https = require('https');
 
 // helmet
 if (app.get('env') === 'production') {
-    app.use(require('helmet')());
+    app.use(require('helmet')({
+        contentSecurityPolicy: false,
+    }));
 }
 
 // webpack
