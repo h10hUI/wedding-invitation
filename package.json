@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm run webpack:build",
+    "start": "npm run webpack:build",
     "start:client": "webpack-cli serve",
-    "start": "babel-watch ./src_server/index.js",
+    "serve": "babel-watch ./src_server/index.js",
     "webpack:build": "webpack --config ./webpack.config.prod.js"
   },
   "repository": {
