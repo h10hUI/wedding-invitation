@@ -48,7 +48,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
 // port
-const PORT = process.env.PORT_NO ?? 80;
+const PORT = process.env.PORT_NO ?? '';
 
 // cors
 const cors = require('cors');
