@@ -136,12 +136,12 @@ app.get('/logout', (req, res) => {
 });
 
 // server
-const httpsOptions = {
-    key: fs.readFileSync('keys/private.key'),
-    cert: fs.readFileSync('keys/certificate.pem')
-}
-
 if (app.get('env') === 'development') {
+    const httpsOptions = {
+        key: fs.readFileSync('keys/private.key'),
+        cert: fs.readFileSync('keys/certificate.pem')
+    }
+
     const server = https.createServer(httpsOptions, app)
         .listen(PORT, () => {
             console.info('listen: ', PORT)
