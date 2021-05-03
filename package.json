@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm run webpack:build && NODE_ENV=production node ./src_server/index.js",
+    "build": "npm run webpack:build",
     "start:client": "webpack-cli serve",
     "start": "babel-watch ./src_server/index.js",
     "webpack:build": "webpack --config ./webpack.config.prod.js"
