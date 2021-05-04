@@ -9,7 +9,7 @@
         &:not(.bl_headerMenu):not(.bl_mv):not(.bl_bubble):not(.bl_footer) {
             @include base.responsive(md) {
                 width: percentage(1080 / 1920);
-                max-width: 1080;
+                max-width: 1080px;
             }
         }
     }

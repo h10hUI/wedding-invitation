@@ -16,10 +16,14 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 20px 0;
+        padding: 12px;
 
         > :last-child {
             margin-left: auto;
+        }
+
+        @include base.responsive(md) {
+            padding: 20px 0;
         }
     }
 
@@ -28,14 +32,19 @@
     }
 
     &_list {
-        display: flex;
-        justify-content: space-between;
-        width: percentage(1080 / 1219);
+        display: none;
 
-        a[class] {
-            text-decoration: none;
-            color: base.$black;
-            @include base.fontsize(l);
+        @include base.responsive(md) {
+            display: flex;
+            justify-content: space-between;
+            width: percentage(1080 / 1219);
+
+            a[class] {
+                text-decoration: none;
+                color: base.$black;
+                @include base.fontsize(l);
+            }
+
         }
     }
 }
