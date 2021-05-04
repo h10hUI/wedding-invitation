@@ -15,7 +15,9 @@
         }
 
         + * {
-            margin-left: auto;
+            @include base.responsive(md) {
+                margin-left: auto;
+            }
         }
     }
 
