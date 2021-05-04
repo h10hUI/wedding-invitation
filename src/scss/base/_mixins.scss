@@ -62,15 +62,19 @@ $fonts: (
         box-shadow: none;
         background-color: var.$black;
         color: var.$white;
-        width: percentage(246 / 524);
-        max-width: 246px;
         border-radius: 1000px;
+        width: 100%;
         padding: 15px 10px;
         cursor: pointer;
 
         &:focus {
             box-shadow: none;
             outline: none;
+        }
+
+        @include responsive(md) {
+            width: percentage(246 / 524);
+            max-width: 246px;
         }
     }
 }

@@ -5,7 +5,11 @@
 
     &_container {
         #{$this}_content + #{$this}_content {
-            margin-top: 52px;
+            margin-top: 32px;
+
+            @include base.responsive(md) {
+                margin-top: 52px;
+            }
         }
     }
 
@@ -36,7 +40,6 @@
     }
 
     &_answerBlock {
-        margin-top: 32px;
         padding: 20px;
 
         * + * {

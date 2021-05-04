@@ -7,14 +7,18 @@
 
     > * {
         &:not(.bl_headerMenu):not(.bl_mv):not(.bl_bubble):not(.bl_footer) {
+            width: calc(100% - 40px);
+
             @include base.responsive(md) {
                 width: percentage(1080 / 1920);
-                max-width: 1080;
+                max-width: 1080px;
             }
         }
     }
 
     section + section {
+        margin-top: 52px;
+
         @include base.responsive(md) {
             margin-top: 84px;
         }

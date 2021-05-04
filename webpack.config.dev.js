@@ -10,7 +10,7 @@ module.exports = merge(common, {
     devServer: {
         contentBase: path.join(__dirname, 'views'),
         port: 3000,
-        host: 'localhost',
+        host: '0.0.0.0',
     },
     watchOptions: {
         poll: 1000,
