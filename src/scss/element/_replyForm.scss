@@ -16,6 +16,12 @@
         box-shadow: none;
         width: 100%;
         color: base.$black;
+        background-color: transparent;
+        margin-top: 8px;
+
+        @include base.responsive(md) {
+            margin-top: 0;
+        }
 
         &:focus, &:active {
             outline: none;
