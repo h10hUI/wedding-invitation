@@ -4,7 +4,16 @@
     &_title {
         font-weight: bold;
         padding-left: 16px;
+
         @include base.fontsize(l);
+
+        + * {
+            margin-top: 20px;
+
+            @include base.responsive(md) {
+                margin-top: 32px;
+            }
+        }
     }
 
     &_answer {

@@ -4,8 +4,13 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    margin: 32px auto 0;
-    width: percentage(524 / 842);
+    margin: 20px auto 0;
+    width: 100%;
+
+    @include base.responsive(md) {
+        margin: 32px auto 0;
+        width: percentage(524 / 842);
+    }
 
     a[class] {
         text-decoration: none;
@@ -17,8 +22,12 @@
     @include base.btnstyle;
 
     &_caption {
-        margin-top: 12px;
+        margin-top: 8px;
         color: base.$grey60;
+
+        @include base.responsive(md) {
+            margin-top: 12px;
+        }
     }
 }
 
