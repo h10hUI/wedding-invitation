@@ -40,17 +40,29 @@
         flex-flow: column nowrap;
         justify-content: center;
         align-items: center;
-        width: percentage(802 / 1920);
         background-color: rgba(base.$white, .3);
-        padding: 110px 0;
         border: 1px solid rgba(base.$white, .4);
-        border-radius: 40px;
+        border-radius: 20px;
         backdrop-filter: blur(10px);
+        width: calc(100% - 40px);
+        margin: 0 auto;
+        padding: 32px;
+
+        @include base.responsive(md) {
+            width: percentage(802 / 1920);
+            padding: 110px 0;
+            border-radius: 40px;
+        }
     }
 
     &_caption {
-        width: percentage(524 / 802);
+        width: 100%;
+
         @include base.fontsize(l);
+
+        @include base.responsive(md) {
+            width: percentage(524 / 802);
+        }
 
         + * {
             margin-top: 32px;
@@ -61,10 +73,14 @@
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
-        width: percentage(524 / 802);
+        width: 100%;
 
         #{$this}_input + #{$this}_input {
             margin-top: 20px;
+        }
+
+        @include base.responsive(md) {
+            width: percentage(524 / 802);
         }
     }
 
@@ -72,11 +88,11 @@
         appearance: none;
         width: 100%;
         @include base.fontsize(normal);
-        padding: 25px 20px;
         border: none;
         box-shadow: none;
-        border-radius: 20px;
         outline: none;
+        border-radius: 8px;
+        padding: 12px;
 
         &:focus {
             box-shadow: none;
@@ -85,6 +101,11 @@
 
         ~ #{$this}_btn {
             margin-top: 32px;
+        }
+
+        @include base.responsive(md) {
+            border-radius: 20px;
+            padding: 25px 20px;
         }
     }
 
