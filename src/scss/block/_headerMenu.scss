@@ -2,8 +2,8 @@
 
 .bl_headerMenu {
     z-index: 20;
-    position: relative;
     background-color: base.$white;
+    transition: all .3s ease-in-out;
 
     &_inner {
         @include base.responsive(md) {
@@ -49,3 +49,15 @@
     }
 }
 
+// header state
+[data-header-state='show'] {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+[data-header-state='hide'] {
+    position: fixed;
+    top: -100px;
+    left: 0;
+}

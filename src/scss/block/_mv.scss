@@ -6,7 +6,6 @@
     @include base.responsive(md) {
         width: percentage(1636 / 1920);
         max-width: 1636px;
-        margin-top: 32px;
     }
 
     &_container {
