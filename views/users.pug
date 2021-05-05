@@ -149,10 +149,12 @@ block content
             input.el_replyForm_input(name='entry.624038152', type='name', required)
           .bl_replyForm_inputGrp
             span.el_replyForm_label ご出欠
-            input(type='radio', id='radio1', name='attendance', value='出席します', checked)
-            label(for='radio1') 出席します
-            input(type='radio', id='radio2', name='attendance', value='欠席します')
-            label(for='radio2') 欠席します
+            label.bl_replyForm_radioGrp
+              input(type='radio', id='radio1', name='attendance', value='出席します', required)
+              |出席します
+            label.bl_replyForm_radioGrp
+              input(type='radio', id='radio2', name='attendance', value='欠席します')
+              |欠席します
             input(type='hidden', name='entry.2016768711', data-hidden-type='attendance')
           label.bl_replyForm_inputGrp
             span.el_replyForm_label 郵便番号
