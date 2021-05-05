@@ -29,4 +29,10 @@
             box-shadow: none;
         }
     }
+
+    &_radioLabel {
+        padding-left: .5em;
+
+        @include base.fontsize(form);
+    }
 }
