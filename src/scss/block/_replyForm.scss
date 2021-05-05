@@ -62,5 +62,25 @@
         }
     }
 
+    &_radioGrp {
+        display: flex;
+        align-items: center;
+
+        [type='radio'] {
+            margin: 0;
+            width: (16 * 1.5) * 1px;
+            height: (16 * 1.5) * 1px;
+        }
+
+
+        & + & {
+            margin-top: .5em;
+
+            @include base.responsive(md) {
+                margin-top: 0;
+            }
+        }
+    }
+
     @include base.btnstyle;
 }
