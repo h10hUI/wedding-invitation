@@ -11,11 +11,11 @@ block content
           .bl_headerMenu_logo
             include ./parts/logo_mark.svg
           ul.bl_headerMenu_list
-            li.bl_headerMenu_link: a.el_headerMenu_link(href='#') ご挨拶
-            li.bl_headerMenu_link: a.el_headerMenu_link(href='#') 日時／会場
-            li.bl_headerMenu_link: a.el_headerMenu_link(href='#') ドレスコードについて
-            li.bl_headerMenu_link: a.el_headerMenu_link(href='#') お願い／ご注意
-            li.bl_headerMenu_link: a.el_headerMenu_link(href='#') 出欠フォーム
+            li.bl_headerMenu_link: a.el_headerMenu_link(href='#greeting') ご挨拶
+            li.bl_headerMenu_link: a.el_headerMenu_link(href='#datePlace') 日時／会場
+            li.bl_headerMenu_link: a.el_headerMenu_link(href='#dresscode') ドレスコードについて
+            li.bl_headerMenu_link: a.el_headerMenu_link(href='#attention') お願い／ご注意
+            li.bl_headerMenu_link: a.el_headerMenu_link(href='#replyForm') 出欠フォーム
 
     .bl_bubble
       include ./parts/bubble.svg
@@ -26,7 +26,7 @@ block content
       .bl_mv_container
         img(srcset='/dist/img/mv@2x.jpg, /dist/img/mv_sp@2x.jpg 768w')
 
-    section.bl_greeting
+    section.bl_greeting#greeting
       h2.bl_sectionTitle ご挨拶
       .bl_greeting_textWrapper
         p.el_sectionText
@@ -63,7 +63,7 @@ block content
           br
           |佐藤 央　千織(旧姓 柴田)
 
-    section.bl_datePlace
+    section.bl_datePlace#datePlace
       - var place = 'Unwind+Hotel+%26+Bar+Sapporo'
       h2.bl_sectionTitle 日時／会場
       .bl_datePlace_textWrapper
@@ -86,7 +86,7 @@ block content
           a.bl_sectionButton_link(href='https://www.google.com/maps/dir/?api=1&destination='+`${place}`, target='_blank', data-btn-style='black') 現在地からのルート
           span.bl_sectionButton_caption ※Google マップが開きます
 
-    section.bl_dresscode
+    section.bl_dresscode#dresscode
       h2.bl_sectionTitle ドレスコードについて
       .bl_dresscode_textWrapper
         p.el_sectionText
@@ -97,7 +97,7 @@ block content
         a.bl_sectionButton_link(href='#', target='_blank', data-btn-style='black') イメージを確認する
         span.bl_sectionButton_caption ※pinterestが開きます
 
-    section.bl_attention
+    section.bl_attention#attention
       h2.bl_sectionTitle お願い／ご注意
       .bl_attention_container
         - for (var i = 1; i <= 6; i++)
@@ -125,7 +125,7 @@ block content
                 br
                 |ぜひお気軽にご参加いただけますとうれしいです
 
-    section.bl_replyForm
+    section.bl_replyForm#replyForm
       h2.bl_sectionTitle 出欠フォーム
       .bl_replyForm_textWrapper
         p.el_sectionText
