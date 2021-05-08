@@ -5,6 +5,24 @@
     background-color: base.$white;
     transition: all .3s ease-in-out;
 
+    &_spMenu {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+        text-transform: uppercase;
+
+        @include base.responsive(md) {
+            display: none;
+        }
+    }
+
+    &_spBlock {
+        @include base.responsive(md) {
+            display: none;
+        }
+    }
+
     &_inner {
         @include base.responsive(md) {
             width: percentage(1219 / 1920);

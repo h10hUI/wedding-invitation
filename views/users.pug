@@ -6,6 +6,8 @@ block var
 block content
   main.ly_users
     header.bl_headerMenu(data-header-state='show')
+      .bl_headerMenu_spMenu
+        |menu
       .bl_headerMenu_inner
         nav.bl_headerMenu_navigation
           .bl_headerMenu_logo
@@ -16,6 +18,13 @@ block content
             li.bl_headerMenu_link: a.el_headerMenu_link(href='#dresscode') ドレスコードについて
             li.bl_headerMenu_link: a.el_headerMenu_link(href='#attention') お願い／ご注意
             li.bl_headerMenu_link: a.el_headerMenu_link(href='#replyForm') 出欠フォーム
+      .bl_spMenu(data-sp-menu='hide')
+        ul.bl_spMenu_spList
+          li.bl_spMenu_link: a.el_spMenu_link(href='#greeting') ご挨拶
+          li.bl_spMenu_link: a.el_spMenu_link(href='#datePlace') 日時／会場
+          li.bl_spMenu_link: a.el_spMenu_link(href='#dresscode') ドレスコードについて
+          li.bl_spMenu_link: a.el_spMenu_link(href='#attention') お願い／ご注意
+          li.bl_spMenu_link: a.el_spMenu_link(href='#replyForm') 出欠フォーム
 
     .bl_bubble
       include ./parts/bubble.svg
