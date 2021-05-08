@@ -48,6 +48,7 @@ export default function headerFunction() {
         Array.prototype.forEach.call(elms, elm => {
             elm.addEventListener('click', () => {
                 list.setAttribute('data-sp-menu', 'hide')
+                btn.innerHTML = 'menu';
             });
         });
     }
