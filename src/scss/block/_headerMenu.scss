@@ -2,8 +2,26 @@
 
 .bl_headerMenu {
     z-index: 20;
-    position: relative;
     background-color: base.$white;
+    transition: all .3s ease-in-out;
+
+    &_spMenu {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        text-transform: uppercase;
+
+        @include base.responsive(md) {
+            display: none;
+        }
+    }
+
+    &_spBlock {
+        @include base.responsive(md) {
+            display: none;
+        }
+    }
 
     &_inner {
         @include base.responsive(md) {
@@ -49,3 +67,15 @@
     }
 }
 
+// header state
+[data-header-state='show'] {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+[data-header-state='hide'] {
+    position: fixed;
+    top: -100px;
+    left: 0;
+}
