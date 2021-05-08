@@ -5,6 +5,7 @@
     position: absolute;
     left: 0;
     display: flex;
+    justify-content: center;
     background-color: base.$white;
     overflow: hidden;
     width: 100%!important;
@@ -15,6 +16,22 @@
     @include base.responsive(md) {
         display: none;
     }
+
+    &_list {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &_link {
+        width: calc(50% - 10px);
+
+        &:nth-child(n + 3) {
+            margin-top: 1em;
+        }
+    }
+
 }
 
 // state
