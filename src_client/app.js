@@ -1,10 +1,10 @@
 import fetchName from './fetch-name';
-import fetchGroup from './fetch-group';
+import fetchData from './fetch-data';
 import getAttendance from './get-attendance';
 import headerFunction from './header-function';
 
 fetchName();
-fetchGroup();
+fetchData();
 getAttendance();
 headerFunction();
 
