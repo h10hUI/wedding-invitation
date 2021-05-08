@@ -37,9 +37,11 @@ export default function headerFunction() {
         btn.addEventListener('click', () => {
             const attr = list.getAttribute('data-sp-menu');
             if (attr === 'show') {
-                list.setAttribute('data-sp-menu', 'hide')
+                list.setAttribute('data-sp-menu', 'hide');
+                btn.innerHTML = 'menu';
             } else {
-                list.setAttribute('data-sp-menu', 'show')
+                list.setAttribute('data-sp-menu', 'show');
+                btn.innerHTML = 'close';
             }
         });
 
