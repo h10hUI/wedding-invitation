@@ -1,5 +1,8 @@
+@use '../base/import' as base;
+
 .el_caption {
     display: block;
     text-indent: -1em;
     padding-left: 1em;
+    font-size: 12px;
 }
