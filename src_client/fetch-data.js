@@ -32,11 +32,11 @@ export default function fetchData() {
                     }
                 })
                 .then(() => {
-                    areas.group.innerHTML = groupData;
-                    areas.name.innerHTML = nameData;
-                    areas.start.innerHTML = startData;
-                    areas.end.innerHTML = endData;
-                    areas.kana.value = kanaData;
+                    areas.group.innerHTML = groupData ? groupData : 'ERR!';
+                    areas.name.innerHTML = nameData ? nameData : 'ERR!';
+                    areas.start.innerHTML = startData ? startData : 'ERR!';
+                    areas.end.innerHTML = endData ? endData : 'ERR!';
+                    areas.kana.value = kanaData ? kanaData : '';
                 })
         }
 
