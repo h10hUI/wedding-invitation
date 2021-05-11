@@ -10,7 +10,6 @@
         justify-content: flex-start;
         align-items: center;
         flex-flow: row wrap;
-        gap: base.get_vw(32, 768);
         padding: 20px;
 
         @include base.responsive(md) {
