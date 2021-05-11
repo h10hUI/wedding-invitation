@@ -9,6 +9,11 @@
 
     &_link {
         height: 2rem;
+        margin-left: base.get_vw(32, 768);
+
+        @include base.responsive(md) {
+            margin-left: 0;
+        }
 
         img {
             height: 100%;
