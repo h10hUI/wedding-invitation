@@ -6,11 +6,14 @@ export default function fetchData() {
     // ターゲットになる要素
     const targetElement = document.querySelector('.bl_replyForm');
     const areas = {
-        group: document.querySelector('[data-pass-text="group"]'),
-        name:  document.querySelector('[data-pass-text="name"]'),
-        start: document.querySelector('[data-pass-text="start"]'),
-        end:   document.querySelector('[data-pass-text="end"]'),
-        kana:  document.querySelector('[data-form-input="kana"]'),
+        group:     document.querySelector('[data-pass-text="group"]'),
+        name:      document.querySelector('[data-pass-text="name"]'),
+        start:     document.querySelector('[data-pass-text="start"]'),
+        end:       document.querySelector('[data-pass-text="end"]'),
+        kana:      document.querySelector('[data-form-input="kana"]'),
+        first:     document.querySelector('[data-date-text="first-name"]'),
+        startTime: document.querySelector('[data-date-text="start-time"]'),
+        endTime:   document.querySelector('[data-date-text="end-time"]'),
     };
     // API問い合わせ先URL
     const apiURL = 'https://script.google.com/a/hi0711.xyz/macros/s/AKfycbze5J3J7RCrD-T8meouPAKmjQn0DbOKgOG_rOyQ/exec?q=' + params.get('name');
@@ -18,7 +21,7 @@ export default function fetchData() {
     if (targetElement) {
         function returnData() {
             // 変数定義
-            let groupData, nameData, startData, endData, kanaData;
+            let groupData, nameData, startData, endData, kanaData, firstData;
 
             return fetch(apiURL)
                 .then((response) => response.json())
@@ -29,6 +32,7 @@ export default function fetchData() {
                         startData = data[i].start;
                         endData = data[i].end;
                         kanaData = data[i].kana;
+                        firstData = data[i].firstName;
                     }
                 })
                 .then(() => {
@@ -37,6 +41,9 @@ export default function fetchData() {
                     areas.start.innerHTML = startData || 'ERR!';
                     areas.end.innerHTML = endData || 'ERR!';
                     areas.kana.value = kanaData || '';
+                    areas.first.innerHTML = firstData || '';
+                    areas.startTime.innerHTML = startData || 'ERR!';
+                    areas.endTime.innerHTML = endData || 'ERR!';
                 })
         }
 
