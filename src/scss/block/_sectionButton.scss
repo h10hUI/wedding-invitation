@@ -15,6 +15,7 @@
     a[class] {
         text-decoration: none;
         text-align: center;
+        color: base.$white;
 
         @include base.fontsize(normal);
     }
