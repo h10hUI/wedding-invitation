@@ -24,6 +24,14 @@ ul, ol {
 }
 
 a {
+    &[class] {
+        color: inherit;
+
+        &:visited {
+            color: inherit;
+        }
+    }
+
     &:not([class]) {
         text-decoration-skip-ink: auto;
     }
