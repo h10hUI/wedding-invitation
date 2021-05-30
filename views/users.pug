@@ -17,12 +17,14 @@ block content
             li.bl_headerMenu_link: a.el_headerMenu_link(href='#datePlace') 日時／会場
             li.bl_headerMenu_link: a.el_headerMenu_link(href='#dresscode') ドレスコードについて
             li.bl_headerMenu_link: a.el_headerMenu_link(href='#attention') お願い／ご注意
+            li.bl_headerMenu_link: a.el_headerMenu_link(href='#instagram') Instagram
       .bl_spMenu(data-sp-menu='hide')
         ul.bl_spMenu_list
           li.bl_spMenu_link: a.el_spMenu_link(href='#greeting') ご挨拶
           li.bl_spMenu_link: a.el_spMenu_link(href='#datePlace') 日時／会場
           li.bl_spMenu_link: a.el_spMenu_link(href='#dresscode') ドレスコードについて
           li.bl_spMenu_link: a.el_spMenu_link(href='#attention') お願い／ご注意
+          li.bl_spMenu_link: a.el_spMenu_link(href='#instagram') Instagram
 
     .bl_bubble
       include ./parts/bubble.svg
@@ -296,3 +298,7 @@ block content
                 |自由に屋外でお過ごしいただくことも
                 br
                 |可能です
+
+    section.bl_instagram#instagram
+      h2.bl_sectionTitle Instagram
+      .bl_instagram_content
