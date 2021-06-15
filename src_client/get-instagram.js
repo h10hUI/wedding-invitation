@@ -26,8 +26,18 @@ export const fetchInstagram = () => {
             return data.data.data;
         };
         getData().then(data => {
+            /**
+             * media_urlの配列を返す
+             *
+             * @return Array media_url
+             */
             const urlData = data.map(e => e.media_url);
             console.log(urlData);
+            urlData.forEach(item => {
+                // item が存在していたらhtmlを返す
+                const domElem = item ? `<img class="el_instagram_item" src="${item}">` : '';
+                target.innerHTML += domElem;
+            });
         });
     }
 };
