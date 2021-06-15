@@ -35,8 +35,15 @@ export const fetchInstagram = () => {
             console.log(urlData);
             urlData.forEach(item => {
                 // item が存在していたらhtmlを返す
-                const domElem = item ? `<img class="el_instagram_item" src="${item}">` : '';
-                target.innerHTML += domElem;
+                if (item.includes('scontent')) {
+                    const domElem = `<img class="el_instagram_item" src="${item}">`;
+                    target.innerHTML += domElem;
+                } else if (item.includes('video')) {
+                    const videoElem = `<video class="el_instagram_item" src="${item}">`;
+                    target.innerHTML += videoElem;
+                } else {
+                    return false;
+                }
             });
         });
     }
