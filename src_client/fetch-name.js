@@ -1,17 +1,19 @@
 export default function fetchName() {
-    const nameField = document.querySelector('#username');
+  const nameField = document.querySelector('#username');
 
-    if (nameField) {
-        function cropName() {
-            const userName = (target) => {
-                const regex = /\s+/;
-                let regexName = target.value.replace(regex, '');
-                return regexName;
-            };
-            const hiddenInput = document.querySelector('#cropped');
-            hiddenInput.value = userName(nameField);
-        }
+  if (nameField) {
+    // eslint-disable-next-line
+    function cropName() {
+      const userName = (target) => {
+        const regex = /\s+/;
+        const regexName = target.value.replace(regex, '');
 
-        nameField.addEventListener('blur', cropName, false);
+        return regexName;
+      };
+      const hiddenInput = document.querySelector('#cropped');
+      hiddenInput.value = userName(nameField);
     }
+
+    nameField.addEventListener('blur', cropName, false);
+  }
 }
