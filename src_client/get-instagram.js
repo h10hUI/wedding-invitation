@@ -9,7 +9,7 @@ const BUSINESS_ID = process.env.BUSINESS_ID;
 const hashId = '17843862859017769';
 
 // 検索フィールド定数化
-const searchFields = 'id,media_url';
+const searchFields = 'id,media_url,permalink';
 
 // 表示数
 const quantity = 6;
@@ -27,19 +27,32 @@ export const fetchInstagram = () => {
         };
         getData().then(data => {
             /**
-             * media_urlの配列を返す
+             * media_urlとpermalinkの配列を返す
              *
-             * @return Array media_url
+             * @return Array media_url, permalink
              */
-            const urlData = data.map(e => e.media_url);
+            const urlData = data.map(e => {
+                return {
+                    url: e.media_url,
+                    link: e.permalink
+                };
+            });
             console.log(urlData);
             urlData.forEach(item => {
                 // item が存在していたらhtmlを返す
-                if (item.includes('scontent')) {
-                    const domElem = `<img class="el_instagram_item" src="${item}">`;
-                    target.innerHTML += domElem;
-                } else if (item.includes('video')) {
-                    const videoElem = `<video class="el_instagram_item" src="${item}">`;
+                if (item.url && item.url.includes('scontent')) {
+                    const imgElem = `
+                        <a class="bl_instagram_card" href="${item.link}" target="_blank" rel="noopener">
+                            <img class="el_instagram_item" src="${item.url}">
+                        </a>
+                    `;
+                    target.innerHTML += imgElem;
+                } else if (item.url && item.url.includes('video')) {
+                    const videoElem = `
+                        <a class="bl_instagram_card" href="${item.link}" target="_blank" rel="noopener">
+                            <video class="el_instagram_item" src="${item.url}">
+                        </a>
+                    `;
                     target.innerHTML += videoElem;
                 } else {
                     return false;
