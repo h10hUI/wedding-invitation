@@ -9,4 +9,3 @@ fetchName();
 fetchData();
 getAttendance();
 headerFunction();
-

@@ -3,6 +3,7 @@ require('dotenv').config();
 
 // 必要なモジュール
 const express = require('express');
+
 const app = express();
 const bcrypt = require('bcrypt');
 const passport = require('passport');
@@ -15,52 +16,64 @@ const https = require('https');
 
 // helmet
 if (app.get('env') === 'production') {
-    app.use(require('helmet')({
-        contentSecurityPolicy: false,
-    }));
+  app.use(
+    // eslint-disable-next-line
+    require('helmet')({
+      contentSecurityPolicy: false,
+    }),
+  );
 }
 
 // webpack
+/* eslint-disable */
 if (app.get('env') === 'development') {
-    const webpack = require('webpack');
-    const webpackDevMiddleware = require('webpack-dev-middleware');
-    const webpackHotMiddleware = require('webpack-hot-middleware');
-    const devServerEnabled = true;
-    const config = require('../webpack.config.dev.js');
+  const webpack = require('webpack');
+  const webpackDevMiddleware = require('webpack-dev-middleware');
+  const webpackHotMiddleware = require('webpack-hot-middleware');
+  const devServerEnabled = true;
+  const config = require('../webpack.config.dev.js');
 
-    if (devServerEnabled) {
-        config.entry.app.unshift('webpack-hot-middleware/client?reload=true&timeout=1000');
-        config.plugins.push(new webpack.HotModuleReplacementPlugin());
+  if (devServerEnabled) {
+    config.entry.app.unshift(
+      'webpack-hot-middleware/client?reload=true&timeout=1000',
+    );
+    config.plugins.push(new webpack.HotModuleReplacementPlugin());
 
-        const compiler = webpack(config);
+    const compiler = webpack(config);
 
-        app.use(webpackDevMiddleware(compiler, {
-            publicPath: config.output.publicPath
-        }));
+    app.use(
+      webpackDevMiddleware(compiler, {
+        publicPath: config.output.publicPath,
+      }),
+    );
 
-        app.use(webpackHotMiddleware(compiler));
-    }
+    app.use(webpackHotMiddleware(compiler));
+  }
 }
+/* eslint-enable */
 
 // logging
 app.use(require('morgan')('combined'));
 
 // express.json
 app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 
 // port
 const PORT = process.env.PORT ?? '3000';
 
 // cors
 const cors = require('cors');
+
 const PROTOCOL = process.env.PROTOCOL ?? 'https://';
 const DOMAIN = PROTOCOL + process.env.HOST;
-app.use(cors({
-    origin: DOMAIN + ':' + PORT,
+app.use(
+  cors({
+    origin: `${DOMAIN}:${PORT}`,
     credentials: true,
-    optionSuccessStatus: 200
-}));
+    optionSuccessStatus: 200,
+  }),
+);
 
 // views engine
 app.set('views', path.join(__dirname, '../views'));
@@ -77,17 +90,17 @@ app.use(flash());
 
 // sessionの設定
 const maxage = 60 * 60 * 1000 * 24 * 3; // 3days
-let sess = {
-    secret: ['wedding party', 'suggar pepper sparkle'],
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-        maxAge: maxage,
-    }
-}
+const sess = {
+  secret: ['wedding party', 'suggar pepper sparkle'],
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    maxAge: maxage,
+  },
+};
 if (app.get('env') === 'production') {
-    app.set('trust proxy', 1)
-    sess.cookie.secure = true
+  app.set('trust proxy', 1);
+  sess.cookie.secure = true;
 }
 
 // passportの定義
@@ -99,57 +112,60 @@ app.use(passport.session());
 const SECRET = bcrypt.hashSync(process.env.DEFAULT_SECRET, 10);
 
 // strategiesの定義
-passport.use(new LocalStrategy(
-    (username, password, done) => {
-        // ユーザー名が不正な時
-        if (!username) {
-            return done(null, false, {
-                message: 'ユーザー名を入力してください。'
-            });
-        }
-        // パスワードが不正な時
-        if (!bcrypt.compareSync(password, SECRET)) {
-            return done(null, false, {
-                message: '正しいパスワードを入力してください。'
-            });
-        }
-        return done(null, username)
-    })
+passport.use(
+  new LocalStrategy((username, password, done) => {
+    // ユーザー名が不正な時
+    if (!username) {
+      return done(null, false, {
+        message: 'ユーザー名を入力してください。',
+      });
+    }
+    // パスワードが不正な時
+    if (!bcrypt.compareSync(password, SECRET)) {
+      return done(null, false, {
+        message: '正しいパスワードを入力してください。',
+      });
+    }
+
+    return done(null, username);
+  }),
 );
 
 // serialize
 passport.serializeUser((user, done) => {
-    done(null, user)
+  done(null, user);
 });
 passport.deserializeUser((user, done) => {
-    done(null, user)
+  done(null, user);
 });
 
 // Router
+/* eslint-disable */
 const indexRouter = require(path.join(__dirname, '../routes/index'));
 const usersRouter = require(path.join(__dirname, '../routes/users'));
+/* eslint-enable */
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 // 共通 - ログアウトのルーティング
 app.get('/logout', (req, res) => {
-    req.logout();
-    res.redirect('/');
+  req.logout();
+  res.redirect('/');
 });
 
 // server
+/* eslint-disable */
 if (app.get('env') === 'development') {
-    const httpsOptions = {
-        key: fs.readFileSync('keys/private.key'),
-        cert: fs.readFileSync('keys/certificate.pem')
-    }
+  const httpsOptions = {
+    key: fs.readFileSync('keys/private.key'),
+    cert: fs.readFileSync('keys/certificate.pem'),
+  };
 
-    const server = https.createServer(httpsOptions, app)
-        .listen(PORT, () => {
-            console.info('listen: ', PORT)
-        });
+  const server = https.createServer(httpsOptions, app).listen(PORT, () => {
+    console.info('listen: ', PORT);
+  });
 } else {
-    app.listen(PORT, () => {
-        console.info('listen: ', PORT)
-    });
+  app.listen(PORT, () => {
+    console.info('listen: ', PORT);
+  });
 }
