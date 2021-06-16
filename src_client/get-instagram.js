@@ -42,17 +42,17 @@ const fetchInstagram = () => {
         // item が存在していたらhtmlを返す
         if (item.url && item.url.includes('scontent')) {
           const imgElem = `
-                        <a class="bl_instagram_card" href="${item.link}" target="_blank" rel="noopener">
-                            <img class="el_instagram_item" src="${item.url}">
-                        </a>
-                    `;
+            <a class="bl_instagram_card" href="${item.link}" target="_blank" rel="noopener">
+              <img class="el_instagram_item" src="${item.url}">
+            </a>
+          `;
           target.innerHTML += imgElem;
         } else if (item.url && item.url.includes('video')) {
           const videoElem = `
-                        <a class="bl_instagram_card" href="${item.link}" target="_blank" rel="noopener">
-                            <video class="el_instagram_item" src="${item.url}">
-                        </a>
-                    `;
+            <a class="bl_instagram_card" href="${item.link}" target="_blank" rel="noopener">
+                <video class="el_instagram_item" src="${item.url}">
+            </a>
+          `;
           target.innerHTML += videoElem;
         }
       });
