@@ -14,7 +14,7 @@ const hashId = '17843862859017769';
 const searchFields = 'id,media_url,permalink';
 
 // 表示数
-const quantity = 6;
+const quantity = 10;
 
 // 生成したURL
 const graphApiUrl = `https://graph.facebook.com/v10.0/${hashId}/recent_media?user_id=${BUSINESS_ID}&access_token=${TOKEN}&fields=${searchFields}&limit=${quantity}`;
@@ -37,7 +37,7 @@ const fetchInstagram = () => {
         url: e.media_url,
         link: e.permalink,
       }));
-      console.log(urlData); // eslint-disable-line no-console
+      console.table(urlData); // eslint-disable-line no-console
       urlData.forEach((item) => {
         // item が存在していたらhtmlを返す
         if (item.url && item.url.includes('scontent')) {
