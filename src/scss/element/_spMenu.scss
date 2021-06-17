@@ -1,8 +1,8 @@
 @use '../base/import' as base;
 
 .el_spMenu {
-    &_link {
-        text-decoration: none;
-        color: base.$black;
-    }
+  &_link {
+    color: base.$black;
+    text-decoration: none;
+  }
 }

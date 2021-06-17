@@ -1,19 +1,21 @@
 @use '../base/import' as base;
 
 .bl_instagram {
-    &_content {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 12px;
-        row-gap: 20px;
+  &_content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 20px;
+    column-gap: 12px;
 
-        @include base.responsive(md) {
-            grid-template-columns: repeat(5, 1fr);
-        }
+    @include base.responsive(md) {
+      grid-template-columns: repeat(5, 1fr);
     }
-    &_card {
-        img, video {
-            width: 100%;
-        }
+  }
+
+  &_card {
+    img,
+    video {
+      width: 100%;
     }
+  }
 }

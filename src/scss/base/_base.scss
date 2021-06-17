@@ -5,20 +5,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
 
 html {
-    transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 body {
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 12px;
-    display: flex;
-    flex-flow: column nowrap;
-    max-width: 100%;
-    overflow-x: hidden;
-    color: var.$black;
+  display: flex;
+  flex-flow: column nowrap;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 12px;
+  color: var.$black;
 
-    @include mix.responsive(md) {
-        font-size: 14px;
-    }
+  @include mix.responsive(md) {
+    font-size: 14px;
+  }
 }
-
