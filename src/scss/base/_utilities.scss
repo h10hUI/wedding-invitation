@@ -1,16 +1,15 @@
 @use './variables' as var;
 
 [data-pass-text] {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 [data-date-text='start-time'] {
-    font-weight: bold;
-    border-bottom: 2px solid var.$purple;
+  font-weight: bold;
+  border-bottom: 2px solid var.$purple;
 }
 
 [data-date-text='end-time'] {
-    font-weight: bold;
-    border-bottom: 2px solid var.$green;
+  font-weight: bold;
+  border-bottom: 2px solid var.$green;
 }
-

@@ -1,48 +1,47 @@
 @use '../base/import' as base;
 
 .bl_spMenu {
-    z-index: 20;
-    position: absolute;
-    left: 0;
+  position: absolute;
+  left: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  width: 100% !important;
+  padding-right: 20px;
+  padding-left: 20px;
+  overflow: hidden;
+  background-color: base.$white;
+  transition: all 0.3s ease-in-out;
+
+  @include base.responsive(md) {
+    display: none;
+  }
+
+  &_list {
     display: flex;
-    justify-content: center;
-    background-color: base.$white;
-    overflow: hidden;
-    width: 100%!important;
-    padding-left: 20px;
-    padding-right: 20px;
-    transition: all .3s ease-in-out;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
 
-    @include base.responsive(md) {
-        display: none;
+  &_link {
+    width: calc(50% - 10px);
+
+    &:nth-child(n + 3) {
+      margin-top: 1em;
     }
-
-    &_list {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-        width: 100%;
-    }
-
-    &_link {
-        width: calc(50% - 10px);
-
-        &:nth-child(n + 3) {
-            margin-top: 1em;
-        }
-    }
-
+  }
 }
 
 // state
 [data-sp-menu='show'] {
-    height: auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
+  height: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 [data-sp-menu='hide'] {
-    height: 0;
-    padding-top: 0;
-    padding-bottom: 0;
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }

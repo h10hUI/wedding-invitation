@@ -1,46 +1,47 @@
 @use '../base/import' as base;
 
 .el_footer {
-    &_text {
-        text-transform: uppercase;
+  &_text {
+    text-transform: uppercase;
 
-        @include base.fontsize(l);
+    @include base.fontsize(l);
+  }
+
+  &_link {
+    height: 2rem;
+    margin-left: base.get_vw(32, 768);
+
+    @include base.responsive(md) {
+      margin-left: 0;
     }
 
-    &_link {
-        height: 2rem;
-        margin-left: base.get_vw(32, 768);
-
-        @include base.responsive(md) {
-            margin-left: 0;
-        }
-
-        img {
-            height: 100%;
-        }
-
-        + * {
-            @include base.responsive(md) {
-                margin-left: auto;
-            }
-        }
+    img {
+      height: 100%;
     }
 
-    &_logoutBtn {
-        appearance: none;
-        border: none;
-        box-shadow: none;
-        outline: none;
-        background: none;
-        padding: 0;
-        color: base.$white;
-        text-decoration: underline;
-        cursor: pointer;
-
-        @include base.fontsize(normal);
-
-        &:focus, &:active {
-            outline: none;
-        }
+    + * {
+      @include base.responsive(md) {
+        margin-left: auto;
+      }
     }
+  }
+
+  &_logoutBtn {
+    padding: 0;
+    color: base.$white;
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    appearance: none;
+
+    @include base.fontsize(normal);
+
+    &:focus,
+    &:active {
+      outline: none;
+    }
+  }
 }

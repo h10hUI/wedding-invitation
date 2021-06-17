@@ -1,39 +1,39 @@
 @use '../base/import' as base;
 
 .el_attention {
-    &_title {
-        font-weight: bold;
-        padding-left: 16px;
+  &_title {
+    padding-left: 16px;
+    font-weight: bold;
 
-        @include base.fontsize(l);
+    @include base.fontsize(l);
 
-        + * {
-            margin-top: 20px;
+    + * {
+      margin-top: 20px;
 
-            @include base.responsive(md) {
-                margin-top: 32px;
-            }
-        }
+      @include base.responsive(md) {
+        margin-top: 32px;
+      }
     }
+  }
 
-    &_answer {
-        @include base.fontsize(normal);
+  &_answer {
+    @include base.fontsize(normal);
+  }
+
+  &_list {
+    position: relative;
+    padding-left: 1em;
+
+    &::before {
+      position: absolute;
+      top: calc(0.5em * 1.5);
+      left: -0.25em;
+      display: block;
+      width: 0.5em;
+      height: 0.5em;
+      content: '';
+      background-color: base.$black;
+      transform: translateX(50%);
     }
-
-    &_list {
-        position: relative;
-        padding-left: 1em;
-
-        &::before {
-            position: absolute;
-            top: calc(.5em * 1.5);
-            left: -0.25em;
-            content: '';
-            display: block;
-            width: .5em;
-            height: .5em;
-            background-color: base.$black;
-            transform: translateX(50%);
-        }
-    }
+  }
 }
