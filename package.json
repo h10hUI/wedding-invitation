@@ -8,9 +8,13 @@
     "start:client": "webpack-cli serve",
     "serve": "babel-watch ./src_server/index.js",
     "webpack:build": "webpack --config ./webpack.config.prod.js",
-    "lint": "eslint '{src_server,src_client}/**/*.js'",
+    "lint:es": "eslint '{src_server,src_client}/**/*.js'",
+    "lint:es:fix": "eslint --fix '{src_server,src_client}/**/*.js'",
+    "lint:style": "stylelint 'src/scss/**/*.{css,scss}'",
+    "lint:style:fix": "stylelint --fix 'src/scss/**/*.{css,scss}'",
+    "lint": "npm run -S lint:style; npm run -S lint:es",
+    "lint:fix": "npm run -S lint:style:fix; npm run -S lint:es:fix",
     "format": "prettier --write --loglevel=warn '{src_server,src_client}/**/*.js'",
-    "lint:fix": "eslint --fix '{src_server,src_client}/**/*.js'",
     "fix": "npm run -s format && npm run -s lint:fix",
     "prod": "npm run webpack:build && NODE_ENV=production nodemon ./src_server/index.js",
     "prepare": "simple-git-hooks > /dev/null"
@@ -87,6 +91,9 @@
     "{src_server,src_client}/**/*.js": [
       "prettier --write --loglevel=warn",
       "eslint --fix --quiet"
+    ],
+    "src/scss/**/*.{css,scss}": [
+      "stylelint --fix --quiet"
     ]
   }
 }
