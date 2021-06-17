@@ -1,34 +1,33 @@
 @use '../base/import' as base;
 
 .bl_sectionButton {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    margin: 20px auto 0;
-    width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+  margin: 20px auto 0;
+
+  @include base.responsive(md) {
+    width: percentage(524 / 842);
+    margin: 32px auto 0;
+  }
+
+  a[class] {
+    color: base.$white;
+    text-align: center;
+    text-decoration: none;
+
+    @include base.fontsize(normal);
+  }
+
+  @include base.btnstyle;
+
+  &_caption {
+    margin-top: 8px;
+    color: base.$grey60;
 
     @include base.responsive(md) {
-        margin: 32px auto 0;
-        width: percentage(524 / 842);
+      margin-top: 12px;
     }
-
-    a[class] {
-        text-decoration: none;
-        text-align: center;
-        color: base.$white;
-
-        @include base.fontsize(normal);
-    }
-
-    @include base.btnstyle;
-
-    &_caption {
-        margin-top: 8px;
-        color: base.$grey60;
-
-        @include base.responsive(md) {
-            margin-top: 12px;
-        }
-    }
+  }
 }
-

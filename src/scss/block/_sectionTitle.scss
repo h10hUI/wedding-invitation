@@ -1,14 +1,13 @@
 @use '../base/import' as base;
 
 .bl_sectionTitle {
-    @include base.fontsize(xl);
+  @include base.fontsize(xl);
 
-    + * {
-        margin-top: 32px;
+  + * {
+    margin-top: 32px;
 
-        @include base.responsive(md) {
-            margin-top: 52px;
-        }
+    @include base.responsive(md) {
+      margin-top: 52px;
     }
+  }
 }
-
