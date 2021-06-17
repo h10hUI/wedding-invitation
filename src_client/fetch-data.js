@@ -1,9 +1,6 @@
 import axios from 'axios';
+import hasParams from './has-params';
 
-// URL取得
-const url = new URL(window.location.href);
-// URLSearchParamsオブジェクト取得
-const params = url.searchParams;
 // ターゲットになる要素
 const areas = {
   group: document.querySelector('[data-pass-text="group"]'),
@@ -18,12 +15,12 @@ const areas = {
 
 // API問い合わせ先URL
 // eslint-disable-next-line
-const apiUrl = `https://script.google.com/a/hi0711.xyz/macros/s/AKfycbze5J3J7RCrD-T8meouPAKmjQn0DbOKgOG_rOyQ/exec?q=${params.get(
+const apiUrl = `https://script.google.com/a/hi0711.xyz/macros/s/AKfycbze5J3J7RCrD-T8meouPAKmjQn0DbOKgOG_rOyQ/exec?q=${hasParams().get(
   'name',
 )}`;
 
 const fetchData = () => {
-  if (params.get('name')) {
+  if (hasParams().get('name')) {
     const getData = async () => {
       const data = await axios.get(apiUrl);
 
