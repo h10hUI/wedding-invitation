@@ -13,11 +13,4 @@ html(lang='ja', style='opacity: 0;')
   body
     block content
 
-    footer.bl_footer
-      .bl_footer_inner
-        p.el_footer_text 2021 sugar pepper sparkle
-        a.el_footer_link(href='https://github.com/hi0711/wedding-invitation' target='_blank'): img(src='/dist/img/GitHub-Mark-Light-120px-plus.png')
-        form(action='/logout' method='GET').el_footer_logout
-          button(type='submit' value='logout').el_footer_logoutBtn ログアウト
-
     script(src='/dist/js/app.bundle.js', defer)
