@@ -6,9 +6,9 @@ const TOKEN = process.env.INSTAGRAM_ACCESS_TOKEN;
 const BUSINESS_ID = process.env.BUSINESS_ID;
 /* eslint-enable */
 
-// hashtag "instagood"のid
-// curl "https://graph.facebook.com/v10.0/ig_hashtag_search?user_id=${id}&access_token=${token}&q=instagood" で取得
-const hashId = '17843862859017769';
+// hashtag "sandp0703"のid
+// curl "https://graph.facebook.com/v10.0/ig_hashtag_search?user_id=${id}&access_token=${token}&q=sandp0703" で取得
+const hashId = '17931956974528825';
 
 // 検索フィールド定数化
 const searchFields = 'id,media_url,permalink';
