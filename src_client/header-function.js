@@ -6,7 +6,7 @@ const headerFunction = () => {
   const btn = document.querySelector('.bl_headerMenu_spMenu');
   const links = document.querySelectorAll('.el_spMenu_link');
 
-  if (header) {
+  if (header && btn) {
     // headerの高さを取得して、要素の位置を調整する
     window.addEventListener('DOMContentLoaded', () => {
       const headerHeight = header.clientHeight;
@@ -34,9 +34,7 @@ const headerFunction = () => {
       // position初期化
       position = scroll;
     });
-  }
 
-  if (btn) {
     btn.addEventListener('click', () => {
       const attr = list.getAttribute('data-sp-menu');
       if (attr === 'show') {
