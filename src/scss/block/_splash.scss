@@ -1,0 +1,13 @@
+@use '../base/import' as base;
+
+.bl_splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  pointer-events: none;
+  background-color: base.$white;
+}
