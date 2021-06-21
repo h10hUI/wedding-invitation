@@ -10,4 +10,20 @@
   height: calc(var(--vh, 1vh) * 100);
   pointer-events: none;
   background-color: base.$white;
+  opacity: 0;
+  animation: opacity 5s ease-out;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
