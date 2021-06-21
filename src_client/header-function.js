@@ -1,6 +1,10 @@
-export default function headerFunction() {
+const headerFunction = () => {
   const header = document.querySelector('header');
+
+  // sp用のメニュー表示
   const list = document.querySelector('.bl_spMenu');
+  const btn = document.querySelector('.bl_headerMenu_spMenu');
+  const links = document.querySelectorAll('.el_spMenu_link');
 
   if (header) {
     // headerの高さを取得して、要素の位置を調整する
@@ -21,17 +25,16 @@ export default function headerFunction() {
         header.setAttribute('data-header-state', 'show');
       } else if (scroll > 100 && scroll > position) {
         header.setAttribute('data-header-state', 'hide');
+        list.setAttribute('data-sp-menu', 'hide');
+        btn.innerHTML = 'menu';
       } else {
         header.setAttribute('data-header-state', 'show');
       }
 
+      // position初期化
       position = scroll;
     });
   }
-
-  // sp用のメニュー表示
-  const btn = document.querySelector('.bl_headerMenu_spMenu');
-  const elms = document.querySelectorAll('.el_spMenu_link');
 
   if (btn) {
     btn.addEventListener('click', () => {
@@ -45,11 +48,13 @@ export default function headerFunction() {
       }
     });
 
-    Array.prototype.forEach.call(elms, (elm) => {
-      elm.addEventListener('click', () => {
+    links.forEach((e) => {
+      e.addEventListener('click', () => {
         list.setAttribute('data-sp-menu', 'hide');
         btn.innerHTML = 'menu';
       });
     });
   }
-}
+};
+
+export default headerFunction;
