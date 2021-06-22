@@ -8,13 +8,13 @@
     "start:client": "webpack-cli serve",
     "serve": "babel-watch ./src_server/index.js",
     "webpack:build": "webpack --config ./webpack.config.prod.js",
-    "lint:es": "eslint '{src_server,src_client}/**/*.js'",
-    "lint:es:fix": "eslint --fix '{src_server,src_client}/**/*.js'",
+    "lint:es": "eslint '{src_server,src_client,routes}/**/*.js'",
+    "lint:es:fix": "eslint --fix '{src_server,src_client,routes}/**/*.js'",
     "lint:style": "stylelint 'src/scss/**/*.{css,scss}'",
     "lint:style:fix": "stylelint --fix 'src/scss/**/*.{css,scss}'",
     "lint": "npm run -S lint:style; npm run -S lint:es",
     "lint:fix": "npm run -S lint:style:fix; npm run -S lint:es:fix",
-    "format": "prettier --write --loglevel=warn '{src_server,src_client}/**/*.js'",
+    "format": "prettier --write --loglevel=warn '{src_server,src_client,routes}/**/*.js'",
     "fix": "npm run -S format && npm run -S lint:fix",
     "prod": "npm run webpack:build && NODE_ENV=production nodemon ./src_server/index.js",
     "prepare": "simple-git-hooks > /dev/null"
@@ -88,7 +88,7 @@
     "pre-commit": "npx lint-staged"
   },
   "lint-staged": {
-    "{src_server,src_client}/**/*.js": [
+    "{src_server,src_client,routes}/**/*.js": [
       "prettier --write --loglevel=warn",
       "eslint --fix --quiet"
     ],
