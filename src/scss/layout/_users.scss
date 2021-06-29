@@ -1,33 +1,33 @@
 @use '../base/import' as base;
 
 .ly_users {
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 
-    > * {
-        &:not(.bl_headerMenu):not(.bl_mv):not(.bl_bubble):not(.bl_footer) {
-            width: calc(100% - 40px);
+  > * {
+    &:not(.bl_headerMenu):not(.bl_mv):not(.bl_bubble):not(.bl_footer) {
+      width: calc(100% - 40px);
 
-            @include base.responsive(md) {
-                width: percentage(1080 / 1920);
-                max-width: 1080px;
-            }
-        }
+      @include base.responsive(md) {
+        width: percentage(1080 / 1920);
+        max-width: 1080px;
+      }
     }
+  }
 
-    section + section {
-        margin-top: 52px;
+  section + section {
+    margin-top: 52px;
 
-        @include base.responsive(md) {
-            margin-top: 84px;
-        }
+    @include base.responsive(md) {
+      margin-top: 84px;
     }
+  }
 }
 
-.bl_headerMenu, .bl_footer {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+.bl_headerMenu,
+.bl_footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
-

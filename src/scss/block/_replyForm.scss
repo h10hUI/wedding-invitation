@@ -1,94 +1,93 @@
 @use '../base/import' as base;
 
 .bl_replyForm {
-    &_contentWrapper {
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: flex-start;
-        margin-top: 20px;
+  &_contentWrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    margin-top: 20px;
 
-        @include base.responsive(md)  {
-            flex-flow: row nowrap;
-            justify-content: space-between;
-            gap: 32px;
-            margin-top: 52px;
-        }
+    @include base.responsive(md) {
+      flex-flow: row nowrap;
+      gap: 32px;
+      justify-content: space-between;
+      margin-top: 52px;
+    }
+  }
+
+  &_boardingPass {
+    @include base.responsive(md) {
+      width: percentage(3 / 8);
     }
 
-    &_boardingPass {
-        @include base.responsive(md) {
-            width: percentage(3 / 8);
-        }
+    svg {
+      max-width: 100%;
+      height: auto;
+      filter: drop-shadow(0 0 12px rgba(base.$black, 0.3));
+    }
+  }
 
-        svg {
-            max-width: 100%;
-            height: auto;
-            filter: drop-shadow(0 0 12px rgba(base.$black, .3));
-        }
+  &_form {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+
+    @include base.responsive(md) {
+      width: percentage(5 / 8);
+      margin-top: 0;
+    }
+  }
+
+  &_inputGrp {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    width: 100%;
+    padding-bottom: 12px;
+    border-bottom: 1px solid base.$black;
+
+    @include base.responsive(md) {
+      flex-flow: row nowrap;
+      gap: 92px;
     }
 
-    &_form {
-        display: flex;
-        flex-flow: column nowrap;
-        align-items: center;
-        margin-top: 20px;
-        width: 100%;
-
-        @include base.responsive(md) {
-            width: percentage(5 / 8);
-            margin-top: 0;
-        }
+    & + & {
+      margin-top: 32px;
     }
 
-    &_inputGrp {
-        display: flex;
-        justify-content: flex-start;
-        flex-flow: column nowrap;
-        width: 100%;
-        border-bottom: 1px solid base.$black;
-        padding-bottom: 12px;
+    ~ button {
+      margin-top: 32px;
+    }
+  }
 
-        @include base.responsive(md) {
-            flex-flow: row nowrap;
-            gap: 92px;
-        }
+  &_radioGrp {
+    display: flex;
+    align-items: center;
 
-        & + & {
-            margin-top: 32px;
-        }
-
-        ~ button {
-            margin-top: 32px;
-        }
+    [type='radio'] {
+      width: (16 * 1.5) * 1px;
+      height: (16 * 1.5) * 1px;
+      margin: 0;
     }
 
-    &_radioGrp {
-        display: flex;
-        align-items: center;
+    &:first-of-type {
+      margin-top: 8px;
 
-        [type='radio'] {
-            margin: 0;
-            width: (16 * 1.5) * 1px;
-            height: (16 * 1.5) * 1px;
-        }
-
-        &:first-of-type  {
-            margin-top: 8px;
-
-            @include base.responsive(md) {
-                margin-top: 0;
-            }
-        }
-
-
-        & + & {
-            margin-top: .5em;
-
-            @include base.responsive(md) {
-                margin-top: 0;
-            }
-        }
+      @include base.responsive(md) {
+        margin-top: 0;
+      }
     }
 
-    @include base.btnstyle;
+    & + & {
+      margin-top: 0.5em;
+
+      @include base.responsive(md) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  @include base.btnstyle;
 }

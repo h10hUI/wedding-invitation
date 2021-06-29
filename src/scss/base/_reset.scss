@@ -1,46 +1,65 @@
 * {
+  box-sizing: border-box;
+
+  &::before,
+  &::after {
     box-sizing: border-box;
-    &::before, &::after {
-        box-sizing: border-box;
-    }
+  }
 }
 
-body, h1, h2, h3, h4, h5, h6, p, ul[class], ol[class], li, figure, dl, dd {
-    margin: 0;
-    padding: 0;
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+dl,
+dd {
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    scroll-behavior: smooth;
-    text-rendering: optimizeSpeed;
-    line-height: 1.8;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.8;
 }
 
-ul, ol {
-    &[class] {
-        list-style: none;
-    }
+ul,
+ol {
+  &[class] {
+    list-style: none;
+  }
 }
 
 a {
-    &[class] {
-        color: inherit;
+  &[class] {
+    color: inherit;
 
-        &:visited {
-            color: inherit;
-        }
+    &:visited {
+      color: inherit;
     }
+  }
 
-    &:not([class]) {
-        text-decoration-skip-ink: auto;
-    }
+  &:not([class]) {
+    text-decoration-skip-ink: auto;
+  }
 }
 
 img {
-    max-width: 100%;
-    display: block;
+  display: block;
+  max-width: 100%;
 }
 
-input, button, textarea, select {
-    font: inherit;
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }

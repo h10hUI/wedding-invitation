@@ -8,7 +8,16 @@
     "start:client": "webpack-cli serve",
     "serve": "babel-watch ./src_server/index.js",
     "webpack:build": "webpack --config ./webpack.config.prod.js",
-    "prod": "npm run webpack:build && NODE_ENV=production nodemon ./src_server/index.js"
+    "lint:es": "eslint '{src_server,src_client,routes}/**/*.js'",
+    "lint:es:fix": "eslint --fix '{src_server,src_client,routes}/**/*.js'",
+    "lint:style": "stylelint 'src/scss/**/*.{css,scss}'",
+    "lint:style:fix": "stylelint --fix 'src/scss/**/*.{css,scss}'",
+    "lint": "npm run -S lint:style; npm run -S lint:es",
+    "lint:fix": "npm run -S lint:style:fix; npm run -S lint:es:fix",
+    "format": "prettier --write --loglevel=warn '{src_server,src_client,routes}/**/*.js'",
+    "fix": "npm run -S format && npm run -S lint:fix",
+    "prod": "npm run webpack:build && NODE_ENV=production nodemon ./src_server/index.js",
+    "prepare": "simple-git-hooks > /dev/null"
   },
   "repository": {
     "type": "git",
@@ -29,6 +38,7 @@
     "@babel/core": "^7.13.10",
     "@babel/preset-env": "^7.13.10",
     "autoprefixer": "^10.2.5",
+    "axios": "^0.21.1",
     "babel-loader": "^8.2.2",
     "bcrypt": "^5.0.1",
     "browserslist": "^4.16.4",
@@ -36,6 +46,7 @@
     "cors": "^2.8.5",
     "css-loader": "^5.2.2",
     "dotenv": "^8.2.0",
+    "dotenv-webpack": "^7.0.2",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "helmet": "^4.4.1",
@@ -53,13 +64,36 @@
   },
   "devDependencies": {
     "babel-watch": "^7.4.1",
+    "eslint": "^7.28.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
     "glob": "^7.1.6",
+    "lint-staged": "^11.0.0",
     "nodemon": "^2.0.7",
+    "prettier": "^2.3.1",
+    "simple-git-hooks": "^2.4.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-recess-order": "^2.4.0",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^4.1.0",
     "webpack-dev-middleware": "^4.1.0",
     "webpack-dev-server": "^3.11.2",
     "webpack-hot-middleware": "^2.25.0"
   },
   "browserslist": [
     ">2%"
-  ]
+  ],
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "{src_server,src_client,routes}/**/*.js": [
+      "prettier --write --loglevel=warn",
+      "eslint --fix --quiet"
+    ],
+    "src/scss/**/*.{css,scss}": [
+      "stylelint --fix --quiet"
+    ]
+  }
 }

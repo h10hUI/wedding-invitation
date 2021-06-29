@@ -1,81 +1,81 @@
 @use '../base/import' as base;
 
 .bl_headerMenu {
-    z-index: 20;
-    background-color: base.$white;
-    transition: all .3s ease-in-out;
+  z-index: 20;
+  background-color: base.$white;
+  transition: all 0.3s ease-in-out;
 
-    &_spMenu {
-        position: absolute;
-        top: 50%;
-        right: 20px;
-        transform: translateY(-50%);
-        text-transform: uppercase;
+  &_spMenu {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    text-transform: uppercase;
+    transform: translateY(-50%);
 
-        @include base.responsive(md) {
-            display: none;
-        }
+    @include base.responsive(md) {
+      display: none;
+    }
+  }
+
+  &_spBlock {
+    @include base.responsive(md) {
+      display: none;
+    }
+  }
+
+  &_inner {
+    @include base.responsive(md) {
+      width: percentage(1219 / 1920);
+      max-width: 1219px;
+    }
+  }
+
+  &_navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+
+    > :last-child {
+      margin-left: auto;
     }
 
-    &_spBlock {
-        @include base.responsive(md) {
-            display: none;
-        }
+    @include base.responsive(md) {
+      padding: 20px 0;
     }
+  }
 
-    &_inner {
-        @include base.responsive(md) {
-            width: percentage(1219 / 1920);
-            max-width: 1219px;
-        }
+  &_logo {
+    height: 40px;
+  }
+
+  &_list {
+    display: none;
+
+    @include base.responsive(md) {
+      display: flex;
+      justify-content: space-between;
+      width: percentage(1080 / 1219);
+
+      a[class] {
+        color: base.$black;
+        text-decoration: none;
+
+        @include base.fontsize(l);
+      }
     }
-
-    &_navigation {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 12px;
-
-        > :last-child {
-            margin-left: auto;
-        }
-
-        @include base.responsive(md) {
-            padding: 20px 0;
-        }
-    }
-
-    &_logo {
-        height: 40px;
-    }
-
-    &_list {
-        display: none;
-
-        @include base.responsive(md) {
-            display: flex;
-            justify-content: space-between;
-            width: percentage(1080 / 1219);
-
-            a[class] {
-                text-decoration: none;
-                color: base.$black;
-                @include base.fontsize(l);
-            }
-
-        }
-    }
+  }
 }
 
 // header state
 [data-header-state='show'] {
-    position: fixed;
-    top: 0;
-    left: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
 [data-header-state='hide'] {
-    position: fixed;
-    top: -100px;
-    left: 0;
+  position: fixed;
+  top: -100px;
+  left: 0;
 }

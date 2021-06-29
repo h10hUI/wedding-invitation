@@ -1,21 +1,21 @@
 @use '../base/import' as base;
 
 .bl_footer {
-    margin-top: 84px;
-    background-color: base.$black;
-    color: base.$white;
+  margin-top: 84px;
+  color: base.$white;
+  background-color: base.$black;
 
-    &_inner {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        flex-flow: row wrap;
-        padding: 20px;
+  &_inner {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
 
-        @include base.responsive(md) {
-            gap: 32px;
-            width: percentage(1219 / 1920);
-            max-width: 1219px;
-        }
+    @include base.responsive(md) {
+      gap: 32px;
+      width: percentage(1219 / 1920);
+      max-width: 1219px;
     }
+  }
 }

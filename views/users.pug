@@ -17,14 +17,14 @@ block content
             li.bl_headerMenu_link: a.el_headerMenu_link(href='#datePlace') 日時／会場
             li.bl_headerMenu_link: a.el_headerMenu_link(href='#dresscode') ドレスコードについて
             li.bl_headerMenu_link: a.el_headerMenu_link(href='#attention') お願い／ご注意
-            li.bl_headerMenu_link: a.el_headerMenu_link(href='#replyForm') 出欠フォーム
+            li.bl_headerMenu_link: a.el_headerMenu_link(href='#instagram') Instagram
       .bl_spMenu(data-sp-menu='hide')
         ul.bl_spMenu_list
           li.bl_spMenu_link: a.el_spMenu_link(href='#greeting') ご挨拶
           li.bl_spMenu_link: a.el_spMenu_link(href='#datePlace') 日時／会場
           li.bl_spMenu_link: a.el_spMenu_link(href='#dresscode') ドレスコードについて
           li.bl_spMenu_link: a.el_spMenu_link(href='#attention') お願い／ご注意
-          li.bl_spMenu_link: a.el_spMenu_link(href='#replyForm') 出欠フォーム
+          li.bl_spMenu_link: a.el_spMenu_link(href='#instagram') Instagram
 
     .bl_bubble
       include ./parts/bubble.svg
@@ -299,55 +299,16 @@ block content
                 br
                 |可能です
 
-    section.bl_replyForm#replyForm
-      h2.bl_sectionTitle 出欠フォーム
-      .bl_replyForm_textWrapper
+    section.bl_instagram#instagram
+      h2.bl_sectionTitle Instagram
+      .bl_instagram_textWrapper
         p.el_sectionText
-          |回答期限：2021年6月3日(木)
+          |instagram投稿は
           br
-          span.el_caption
-            |※締め切りは6月3日(木)までとさせていただきますが
-            br
-            |6月23日(水)までご出欠の変更も可能です
-          span.el_caption
-            |※お子様も一緒に参加される場合はご夫婦どちらかの
-            br
-            |連名でご記入ください(大人はひとりずつ入力してください)
-      .bl_replyForm_contentWrapper
-        .bl_replyForm_boardingPass
-          include ./parts/boarding_pass.svg
-        form.bl_replyForm_form(action='https://docs.google.com/forms/u/0/d/e/1FAIpQLSf1tfMkFcZ4Io3ZNapFe_ZYDQN0MV5C3nKXLSSX5ZeegcOliw/formResponse')
-          label.bl_replyForm_inputGrp
-            span.el_replyForm_label お名前
-            input.el_replyForm_input(name='entry.56205302', type='name', value=`${userName}` required)
-          label.bl_replyForm_inputGrp
-            span.el_replyForm_label ふりがな
-            input.el_replyForm_input(name='entry.624038152', type='name', data-form-input='kana', required)
-          .bl_replyForm_inputGrp
-            span.el_replyForm_label ご出欠
-            label.bl_replyForm_radioGrp
-              input(type='radio', id='radio1', name='attendance', value='出席します', required)
-              span.el_replyForm_radioLabel 出席します
-            label.bl_replyForm_radioGrp
-              input(type='radio', id='radio2', name='attendance', value='欠席します')
-              span.el_replyForm_radioLabel 欠席します
-            input(type='hidden', name='entry.2016768711', data-hidden-type='attendance')
-          label.bl_replyForm_inputGrp
-            span.el_replyForm_label 郵便番号
-            input.el_replyForm_input(name='entry.1550646778', type='postal-code', required)
-          label.bl_replyForm_inputGrp
-            span.el_replyForm_label ご住所
-            input.el_replyForm_input(name='entry.1654353405', type='text', required)
-          label.bl_replyForm_inputGrp
-            span.el_replyForm_label 建物名
-            input.el_replyForm_input(name='entry.614177436', type='address-line1')
-          label.bl_replyForm_inputGrp
-            span.el_replyForm_label お電話番号
-            input.el_replyForm_input(name='entry.139051138', type='tel', required)
-          label.bl_replyForm_inputGrp
-            span.el_replyForm_label メールアドレス
-            input.el_replyForm_input(name='entry.1456987626', type='email', required)
-          button.el_replyForm_button(type='submit' data-btn-style='black') 送信
+          a.el_instagram_link(href='https://www.instagram.com/explore/tags/sandp0703/' target='_blank' rel='noopener') ハッシュタグ #sandp0703
+          br
+          |を付けて投稿
+      .bl_instagram_content
 
     footer.bl_footer
       .bl_footer_inner
@@ -355,4 +316,3 @@ block content
         a.el_footer_link(href='https://github.com/hi0711/wedding-invitation' target='_blank'): img(src='/dist/img/GitHub-Mark-Light-120px-plus.png')
         form(action='/logout' method='GET').el_footer_logout
           button(type='submit' value='logout').el_footer_logoutBtn ログアウト
-
