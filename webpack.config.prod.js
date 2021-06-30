@@ -4,6 +4,6 @@ const common = require('./webpack.config.common');
 
 
 module.exports = merge(common, {
-    devtool: false,
-    mode: 'production',
+  devtool: false,
+  mode: 'production',
 })
