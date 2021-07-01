@@ -14,7 +14,7 @@ module.exports = {
     'at-rule-no-unknown': [
       true,
       {'ignoreAtRules': [
-        'include','use','forward','if','mixin','return','function',
+        'include','use','forward','if','mixin','return','function','keyframes',
       ]},
     ],
     'no-invalid-position-at-import-rule': null,
