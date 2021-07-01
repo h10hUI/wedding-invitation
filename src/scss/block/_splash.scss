@@ -11,7 +11,23 @@
   pointer-events: none;
   background-color: base.$white;
   opacity: 0;
-  animation: opacity 5s ease-out;
+  animation: opacity 3s ease-out;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 40%;
+    height: 40%;
+    content: '';
+    background: url('/dist/img/sandp_logo.svg') no-repeat;
+    transform: translate(-50%, -50%);
+  }
+
+  @include base.responsive(md) {
+    display: none;
+  }
 }
 
 @keyframes opacity {
