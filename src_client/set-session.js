@@ -1,10 +1,10 @@
 import hasParams from './has-params';
 
-// const date = Date.now(); // 実装中はコメントアウト
+const date = Date.now(); // 実装中はコメントアウト
 
 const setSession = () => {
   if (hasParams().get('name') && !sessionStorage.getItem('key')) {
-    // sessionStorage.setItem('key', date); // 実装中はコメントアウト
+    sessionStorage.setItem('key', date); // 実装中はコメントアウト
     const createElement = document.createElement('div');
     createElement.className = 'bl_splash';
     document.body.append(createElement);
