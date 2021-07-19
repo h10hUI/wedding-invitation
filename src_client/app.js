@@ -6,6 +6,7 @@ import headerFunction from './header-function';
 import setFillHeight from './set-fill-height';
 import fetchInstagram from './get-instagram';
 import setSession from './set-session';
+import gallery from './gallery';
 
 domload();
 fetchName();
@@ -15,3 +16,4 @@ headerFunction();
 setFillHeight();
 fetchInstagram();
 setSession();
+gallery();
