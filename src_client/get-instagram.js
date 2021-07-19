@@ -17,7 +17,7 @@ const searchFields = 'id,media_url,permalink';
 const quantity = 10;
 
 // 生成したURL
-const graphApiUrl = `https://graph.facebook.com/v10.0/${hashId}/recent_media?user_id=${BUSINESS_ID}&access_token=${TOKEN}&fields=${searchFields}&limit=${quantity}`;
+const graphApiUrl = `https://graph.facebook.com/v10.0/${hashId}/top_media?user_id=${BUSINESS_ID}&access_token=${TOKEN}&fields=${searchFields}&limit=${quantity}`;
 
 const fetchInstagram = () => {
   const target = document.querySelector('.bl_instagram_content');
