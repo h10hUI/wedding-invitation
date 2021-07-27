@@ -11,7 +11,16 @@ const gallery = () => {
   };
 
   imageData().then((data) => {
-    console.table(data);
+    /**
+     * 配列を作り直す
+     *
+     * @return Array srcUrl, alt
+     */
+    const urlData = data.map((e) => ({
+      srcUrl: e.src_url,
+      alt: e.title,
+    }));
+    console.table(urlData);
   });
 
   Vue.component('hello-component', {
