@@ -14,17 +14,13 @@ block content
             include ./parts/logo_mark.svg
           ul.bl_headerMenu_list
             li.bl_headerMenu_link: a.el_headerMenu_link(href='#greeting') ご挨拶
-            li.bl_headerMenu_link: a.el_headerMenu_link(href='#datePlace') 日時／会場
-            li.bl_headerMenu_link: a.el_headerMenu_link(href='#dresscode') ドレスコードについて
-            li.bl_headerMenu_link: a.el_headerMenu_link(href='#attention') お願い／ご注意
             li.bl_headerMenu_link: a.el_headerMenu_link(href='#instagram') Instagram
+            li.bl_headerMenu_link: a.el_headerMenu_link(href='#gallery') 画像ギャラリー
       .bl_spMenu(data-sp-menu='hide')
         ul.bl_spMenu_list
           li.bl_spMenu_link: a.el_spMenu_link(href='#greeting') ご挨拶
-          li.bl_spMenu_link: a.el_spMenu_link(href='#datePlace') 日時／会場
-          li.bl_spMenu_link: a.el_spMenu_link(href='#dresscode') ドレスコードについて
-          li.bl_spMenu_link: a.el_spMenu_link(href='#attention') お願い／ご注意
           li.bl_spMenu_link: a.el_spMenu_link(href='#instagram') Instagram
+          li.bl_spMenu_link: a.el_spMenu_link(href='#gallery') 画像ギャラリー
 
     .bl_bubble
       include ./parts/bubble.svg
@@ -88,175 +84,6 @@ block content
           br
           |佐藤 央　千織(旧姓 柴田)
 
-    section.bl_gallery#gallery
-      h2.bl_sectionTitle 画像ギャラリー
-      gallery-component
-
-    section.bl_dresscode#dresscode
-      h2.bl_sectionTitle ドレスコードについて
-      .bl_dresscode_textWrapper
-        p.el_sectionText
-          |当日はかっちりした披露宴スタイルではなく
-          br
-          |夏の立食パーティ・イベント参加のように
-          br
-          |カジュアルなスタイルでお越しください！
-        p.el_sectionText
-          |例えば女性は
-          br
-          |リネンのワンピース・サンダル・
-          br
-          |カラフルな小物・さわやかな
-          br
-          |パンツスタイル・ぺたんこパンプス・
-          br
-          |ノースリーブなど どれも大歓迎です！
-        p.el_sectionText
-          |男性なら
-          br
-          |色味があったり柄の入ったシャツ・
-          br
-          |蝶ネクタイやサスペンダーで遊んだり
-          br
-          |ポロシャツもいいですね！
-          br
-          |シンプルにジャケパンスタイルもGoodです！
-        p.el_sectionText
-          |イメージがつきにくいかもしれませんので
-          br
-          |イメージ画像をまとめました。
-          br
-          |参考にしてください＊
-          br
-          |(ちなみに私達は当日スニーカーです)
-      .bl_sectionButton
-        a.bl_sectionButton_link(href='https://pin.it/4OkzZA8', target='_blank', data-btn-style='black') イメージを確認する
-        span.bl_sectionButton_caption ※pinterestが開きます
-
-    section.bl_attention#attention
-      h2.bl_sectionTitle お願い／ご注意
-      .bl_attention_container
-        .bl_attention_content
-          p.el_attention_title 今回のパーティーについて
-          .bl_attention_answerBlock
-            p.el_attention_answer
-              |今回のパーティーは
-              br
-              |コロナ禍でもお気軽にご参加いただけるよう
-              br
-              |滞在時間を短く設定しております
-            p.el_attention_answer
-              |お飲み物や
-              br
-              |軽くつまんでいただけるようなお料理を
-              br
-              |ご用意してお待ちしております
-            p.el_attention_answer
-              |約1時間のなかではありますが
-              br
-              |みなさまと一緒に会話をしたり
-              br
-              |写真撮影をしたりと
-              br
-              |楽しいひとときを過ごせれば幸いです
-            p.el_attention_answer
-              |また短い時間のなかでも
-              br
-              |途中参加 途中退席も可能ですので
-              br
-              |ぜひお気軽に
-              br
-              |ご参加いただけますとうれしいです
-        .bl_attention_content
-          p.el_attention_title 会費について
-          .bl_attention_answerBlock
-            p.el_attention_answer
-              |参加費（5000円）は受付の際に
-              br
-              |現金でお支払いをお願いいたします
-              br
-              |その際できるだけお釣りのないように
-              br
-              |ご用意をお願いいたします
-        .bl_attention_content
-          p.el_attention_title 駐車場について
-          .bl_attention_answerBlock
-            p.el_attention_answer
-              |ホテル周辺に いくつか
-              br
-              |有料コインパーキングがございます
-              br
-              |恐れ入りますが
-              br
-              |実費でのご利用をお願いいたします
-        .bl_attention_content
-          p.el_attention_title エレベーターについて
-          .bl_attention_answerBlock
-            p.el_attention_answer
-              |会場はホテルの10階バースペースを
-              br
-              |予定しております
-              br
-              |(ホテルにエレベーターは2基あります)
-            p.el_attention_answer
-              |またパーティ開始の時間帯が
-              br
-              |ちょうどチェックアウト・清掃の時間と
-              br
-              |かさなっていることから
-              br
-              |エレベーターの混雑が予想されます
-            p.el_attention_answer
-              |ご不便をおかけしますが
-              br
-              |みなさまで譲り合いながら
-              br
-              |ご利用いただけますと幸いです
-        .bl_attention_content
-          p.el_attention_title 喫煙所について
-          .bl_attention_answerBlock
-            p.el_attention_answer
-              |会場内は全面禁煙(電子タバコ不可)です
-              br
-              |喫煙の際はホテル敷地内の駐車場に
-              br
-              |灰皿を用意しておりますので
-              br
-              |そちらをご利用ください
-        .bl_attention_content
-          p.el_attention_title お子様連れのみなさまへ
-          .bl_attention_answerBlock
-            p.el_attention_answer
-              |当日はお子様の授乳やお着替えのための
-              br
-              |別室を用意いたします
-              br
-              |ご使用になりたいときはお気軽に
-              br
-              |お近くのスタッフへお声がけください！
-        .bl_attention_content
-          p.el_attention_title コロナ対策について
-          .bl_attention_answerBlock
-            ul.el_attention_answer
-              li.el_attention_list
-                |受付で手指の消毒をお願いいたします
-              li.el_attention_list
-                |会場各所にも消毒液を配置しております
-                br
-                |ご自由にお使いください
-              li.el_attention_list
-                |会場は定期的に換気いたします
-              li.el_attention_list
-                |会場は半分が屋内・半分が屋外となった
-                br
-                |バーです
-              li.el_attention_list
-                |天候にもよりますが パーティご参加中は
-                br
-                |自由に屋外でお過ごしいただくことも
-                br
-                |可能です
-
     section.bl_instagram#instagram
       h2.bl_sectionTitle Instagram
       .bl_instagram_textWrapper
@@ -267,6 +94,10 @@ block content
           br
           |を付けて投稿
       .bl_instagram_content
+
+    section.bl_gallery#gallery
+      h2.bl_sectionTitle 画像ギャラリー
+      gallery-component
 
     footer.bl_footer
       .bl_footer_inner

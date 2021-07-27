@@ -28,6 +28,12 @@ const gallery = () => {
     Vue.component('gallery-component', {
       template: '<p>hello world</p>',
     });
+
+    /* eslint-disable */
+    const galleryComponent = new Vue({
+      el: '#gallery',
+    });
+    /* eslint-enable */
   }
 };
 
