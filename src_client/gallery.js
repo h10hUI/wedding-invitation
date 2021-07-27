@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import VueViewer from 'v-viewer'; // eslint-disable-line
 import axios from 'axios';
 import hasParams from './has-params';
 
@@ -23,17 +24,17 @@ const gallery = () => {
         alt: e.title,
       }));
       console.table(urlData);
-    });
 
-    Vue.component('gallery-component', {
-      template: '<p>hello world</p>',
-    });
+      Vue.component('gallery-component', {
+        template: '<p>hello world</p>',
+      });
 
-    /* eslint-disable */
-    const galleryComponent = new Vue({
-      el: '#gallery',
+      /* eslint-disable */
+      const galleryComponent = new Vue({
+        el: '#gallery',
+      });
+      /* eslint-enable */
     });
-    /* eslint-enable */
   }
 };
 
