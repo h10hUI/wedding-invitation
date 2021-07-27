@@ -25,7 +25,7 @@ const gallery = () => {
       console.table(urlData);
     });
 
-    Vue.component('hello-component', {
+    Vue.component('gallery-component', {
       template: '<p>hello world</p>',
     });
   }

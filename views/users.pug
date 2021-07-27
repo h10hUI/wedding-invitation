@@ -88,51 +88,9 @@ block content
           br
           |佐藤 央　千織(旧姓 柴田)
 
-    section.bl_datePlace#datePlace
-      - var place = 'Unwind+Hotel+%26+Bar+Sapporo'
-      h2.bl_sectionTitle 日時／会場
-      .bl_datePlace_textWrapper
-        p.el_sectionText
-          |2021年7月3日(土)
-          br
-          span(data-date-text='first-name')
-          |さんのパーティーは
-          br
-          span(data-date-text='start-time')
-          |から
-          span(data-date-text='end-time')
-          |までです
-          br
-          |開始時刻の15分前からご入場いただくことが
-          br
-          |可能です
-        p.el_sectionText
-          |会場名：UNWIND HOTEL&BAR 中島公園
-          br
-          |　　　　10F BAR Ignis
-          br
-          |アクセス：地下鉄南北線
-          br
-          |　　　　　中島公園駅から徒歩5分
-          br
-          |URL：
-          a.el_datePlace_link(href='https://www.hotel-unwind.com/bar' target='_blank') https://www.hotel-unwind.com/bar
-          br
-          |instagram：
-          a.el_datePlace_link(href='https://www.instagram.com/hotel_unwind_sapporo' target='_blank') hotel_unwind_sapporo
-          br
-          |住所：北海道札幌市中央区南8条
-          br
-          |　　　西5丁目289-111
-          br
-          |電話番号：011-530-6050
-        p.el_sectionText
-          |会費：5000円
-      .bl_datePlace_map
-        iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2915.6033623617272!2d141.35021331547833!3d43.04977617914674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5f0b298837efffff%3A0x421b25ff82cbae48!2sUnwind%20Hotel%20%26%20Bar%20Sapporo!5e0!3m2!1sen!2sjp!4v1619763543326!5m2!1sen!2sjp" style="border:0;" allowfullscreen="" loading="lazy")
-        .bl_sectionButton
-          a.bl_sectionButton_link(href='https://www.google.com/maps/dir/?api=1&destination='+`${place}`, target='_blank', data-btn-style='black') 現在地からのルート
-          span.bl_sectionButton_caption ※Google マップが開きます
+    section.bl_gallery#gallery
+      h2.bl_sectionTitle 画像ギャラリー
+      gallery-component
 
     section.bl_dresscode#dresscode
       h2.bl_sectionTitle ドレスコードについて
