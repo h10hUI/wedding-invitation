@@ -157,8 +157,8 @@ app.get('/logout', (req, res) => {
 /* eslint-disable */
 if (app.get('env') === 'development') {
   const httpsOptions = {
-    key: fs.readFileSync('keys/private.key'),
-    cert: fs.readFileSync('keys/certificate.pem'),
+    key: fs.readFileSync('keys/localhost-key.pem'),
+    cert: fs.readFileSync('keys/localhost.pem'),
   };
 
   const server = https.createServer(httpsOptions, app).listen(PORT, () => {
